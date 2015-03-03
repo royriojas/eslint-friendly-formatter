@@ -37,10 +37,30 @@ npm i --save eslint-friendly-formatter
 
 ## Usage
 
+In the command line
+
 ```bash
 # just make sure you pass the path to the module to the format option of eslint
 eslint.js --format './node_modules/eslint-friendly-formattter/index.js' index.js test/ -c './eslint.json'
 ```
+Or as a module
+
+```javascript
+var eslint = require('eslint');
+var opts = readJson('./path/to/options');
+
+var engine = new eslint.CLIEngine( opts );
+var report = engine.executeOnFiles( ['file1.js', 'file2.js'/*, ...*/] );
+var results = report.results || [];
+
+var formatter = require('eslint-friendly-formatter');
+var output = formatter(results);
+
+// this will print the report if any...
+console.log(output);
+
+```
+
 
 It should work well in with eslint-grunt or grunt-eslint
 
