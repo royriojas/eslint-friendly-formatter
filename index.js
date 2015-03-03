@@ -5,7 +5,6 @@
 
 var chalk = require( 'chalk' ),
   table = require( 'text-table' ),
-  path = require( 'path' ),
   assign = require( 'lodash.assign' );
 
 //------------------------------------------------------------------------------

@@ -1,37 +1,36 @@
 describe( 'eslint-friendly-formatter', function () {
   'use strict';
   var expect = require( 'chai' ).expect;
-  var expand = require('glob-expand');
-  var readJSON = require('read-json-sync');
-  var read = require('read-file').readFileSync;
-  var chalk = require('chalk');
+  var expand = require( 'glob-expand' );
+  var readJSON = require( 'read-json-sync' );
+  var read = require( 'read-file' ).readFileSync;
+  var chalk = require( 'chalk' );
 
   var path = require( 'path' );
 
-  var readJsonFile = function (file) {
+  var readJsonFile = function ( file ) {
     try {
-      return readJSON(file);
-    }
-    catch(ex) {
+      return readJSON( file );
+    } catch (ex) {
       return null;
     }
   };
 
-  describe('formatter', function () {
-    var formatter = require('../..');
-    var files = expand(path.resolve(__dirname, '../fixtures/**/*.json'));
+  describe( 'formatter', function () {
+    var formatter = require( '../..' );
+    var files = expand( path.resolve( __dirname, '../fixtures/**/*.json' ) );
 
-    files.forEach(function (file) {
-      it( 'should produce the expected output for the given input: ' + path.basename(path.dirname(file)), function () {
+    files.forEach( function ( file ) {
+      it( 'should produce the expected output for the given input: ' + path.basename( path.dirname( file ) ), function () {
 
-        var results = readJsonFile(file);
-        var output = formatter(results);
+        var results = readJsonFile( file );
+        var output = formatter( results );
 
-        var resultText = read( path.join( path.dirname(file), path.basename(file, '.json') + '.txt'));
+        var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
 
-        expect(chalk.stripColor(output)).to.equal(resultText);
-      });
-    });
+        expect( chalk.stripColor( output ) ).to.equal( resultText );
+      } );
+    } );
   } );
 
 } );

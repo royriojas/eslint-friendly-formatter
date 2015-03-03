@@ -38,6 +38,10 @@ expand( 'test/specs/**/*.js' ).forEach( function ( file ) {
 
 m.run( function ( err ) {
   var exitCode = err ? 1 : 0;
-  if ( err ) console.log( 'failed tests: ' + err );
+  if ( err ) {
+    console.log( 'failed tests: ' + err );
+  }
+  /*eslint-disable*/
   process.exit( exitCode );
+  /*eslint-enable*/
 } );
