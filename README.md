@@ -27,7 +27,7 @@ This module is based on the original `stylish` formatter that is now part of ESL
   ![screenshot](screenshot.png)
 
 - Example 2
-  ![screenshot](screenshot.png)
+  ![screenshot](screenshot2.png)
 
 ## install
 
