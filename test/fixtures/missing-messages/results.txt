@@ -1,0 +1,13 @@
+
+  error       curly       Expected { after 'if' condition                   
+  test/runner.js:41:2
+    if ( err ) console.log( 'failed tests: ' + err );
+    ^
+
+  error  no-process-exit  Don't use process.exit(); throw an error instead  
+  test/runner.js:42:2
+    process.exit( exitCode );
+    ^
+
+
+✖ 2 problems (2 errors, 0 warnings)

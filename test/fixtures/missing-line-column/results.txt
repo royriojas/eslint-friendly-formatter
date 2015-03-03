@@ -1,0 +1,18 @@
+
+  warning                   path is defined but never used                    
+  index.js:0:0
+    path = require( 'path' ),
+  ^
+
+  error                     Expected { after 'if' condition                   
+  test/runner.js:0:0
+    if ( err ) console.log( 'failed tests: ' + err );
+  ^
+
+  error    no-process-exit  Don't use process.exit(); throw an error instead  
+  test/runner.js:42:2
+    process.exit( exitCode );
+    ^
+
+
+✖ 3 problems (2 errors, 1 warning)
