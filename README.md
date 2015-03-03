@@ -41,7 +41,7 @@ In the command line
 
 ```bash
 # just make sure you pass the path to the module to the format option of eslint
-eslint.js --format './node_modules/eslint-friendly-formattter/index.js' index.js test/ -c './eslint.json'
+eslint.js --format './node_modules/eslint-friendly-formatter/index.js' index.js test/ -c './eslint.json'
 ```
 Or as a module
 
