@@ -1,6 +1,6 @@
 {
   "name": "eslint-friendly-formatter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": " simple formatter/reporter for eslint that's friendly with Sublime Text and iterm2 'click to open file' functionality",
   "repository": "royriojas/eslint-friendly-formatter",
   "license": "MIT",
@@ -52,7 +52,6 @@
   },
   "dependencies": {
     "chalk": "^1.0.0",
-    "flat-cache": "^1.0.3",
     "lodash.assign": "^3.0.0",
     "text-table": "^0.2.0"
   }
