@@ -87,6 +87,8 @@ grunt.initConfig({
 });
 ```
 
+## [Changelog](./changelog.md)
+
 ## License 
 
 MIT

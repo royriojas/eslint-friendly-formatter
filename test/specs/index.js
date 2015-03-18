@@ -1,6 +1,6 @@
 describe( 'eslint-friendly-formatter', function () {
   'use strict';
-  var expect = require( 'chai' ).expect;
+
   var expand = require( 'glob-expand' );
   var readJSON = require( 'read-json-sync' );
   var read = require( 'read-file' ).readFileSync;
