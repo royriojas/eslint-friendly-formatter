@@ -32,8 +32,33 @@ This module is based on the original `stylish` formatter that is now part of ESL
 ## install
 
 ```bash
-npm i --save eslint-friendly-formatter
+npm i --save-dev eslint-friendly-formatter
 ```
+
+## Intellij/Webstorm/PhpStorm integration
+0. Install `eslint` and `eslint-friendly-formatter`
+   ```bash
+   npm i -D eslint eslint-friendly-formatter
+   ```
+1. Add a script to your package json like: 
+   ```javascript
+   {
+     "scripts": {
+       "eslint": "eslint --format 'node_modules/eslint-friendly-formatter' -c './configs/eslint.json' file1 file2 dir1/ dir2/",
+     }
+   }
+   ```
+  
+1. Create a external tool to run eslint using this module as your formatter like this
+   - program: `npm`
+   - parameters: `run eslint`
+   - working directory: `$ProjectFileDir$`
+2. Use an output filter like: (Please note the 2 spaces before `$FILE_PATH$`)
+   ```bash
+     $FILE_PATH$.*:$LINE$.*:$COLUMN$
+   ```
+3. When launching the tool now the files will be also clickable, see:
+   ![screenshot](screenshot3.png)
 
 ## Usage
 
@@ -60,7 +85,6 @@ var output = formatter(results);
 console.log(output);
 
 ```
-
 
 It should work well in with eslint-grunt or grunt-eslint
 

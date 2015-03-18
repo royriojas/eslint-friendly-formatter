@@ -6,7 +6,7 @@ describe( 'eslint-friendly-formatter', function () {
   var read = require( 'read-file' ).readFileSync;
   var chalk = require( 'chalk' );
   var path = require( 'path' );
-  var proxyquire = require('proxyquire');
+  var proxyquire = require( 'proxyquire' );
 
   var readJsonFile = function ( file ) {
     try {
@@ -17,13 +17,13 @@ describe( 'eslint-friendly-formatter', function () {
   };
 
   describe( 'formatter', function () {
-    var formatter = proxyquire( '../..' , {
+    var formatter = proxyquire( '../..', {
       path: {
-        resolve: function (_path) {
+        resolve: function ( _path ) {
           return _path;
         }
       }
-    });
+    } );
     var files = expand( path.resolve( __dirname, '../fixtures/**/*.json' ) );
 
     files.forEach( function ( file ) {

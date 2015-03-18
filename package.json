@@ -16,8 +16,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "beautify": "esbeautifier './index.js'",
-    "beautify-check": "esbeautifier -k './index.js'",
+    "beautify": "esbeautifier './index.js' 'test/specs/**/*.js'",
+    "beautify-check": "esbeautifier -k './index.js' 'test/specs/**/*.js'",
     "eslint": "eslint --format './index.js' index.js test/ -c './configs/eslint.json'",
     "lint": "npm run beautify && npm run eslint",
     "test": "mocha-runner 'test/specs/**/*.js'",
