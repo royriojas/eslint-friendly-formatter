@@ -1,8 +1,18 @@
 
 # eslint-friendly-formatter - Changelog
-## HEAD
+## v1.0.5
 - **Build Scripts Changes**
-  - Fixed missing changelogx section - [d18f727]( https://github.com/royriojas/eslint-friendly-formatter/commit/d18f727 ), [Roy Riojas](https://github.com/Roy Riojas), 18/03/2015 02:09:15
+  - Release v1.0.5 - [86d90a3]( https://github.com/royriojas/eslint-friendly-formatter/commit/86d90a3 ), [Roy Riojas](https://github.com/Roy Riojas), 18/03/2015 02:36:35
+    
+  - Add lint task to automatically beautify and lint the code - [e6f8f2e]( https://github.com/royriojas/eslint-friendly-formatter/commit/e6f8f2e ), [Roy Riojas](https://github.com/Roy Riojas), 18/03/2015 02:12:28
+    
+  - Fixed missing changelogx section - [acf90b0]( https://github.com/royriojas/eslint-friendly-formatter/commit/acf90b0 ), [Roy Riojas](https://github.com/Roy Riojas), 18/03/2015 02:09:31
+    
+- **Documentation**
+  - Better documentation for the integration with `intellij` or `webstorm` - [678886d]( https://github.com/royriojas/eslint-friendly-formatter/commit/678886d ), [Roy Riojas](https://github.com/Roy Riojas), 18/03/2015 02:36:21
+    
+- **Enhancements**
+  - Use the full path to the file so IDEs like Webstorm or Intellij can parse the output - [4433a5e]( https://github.com/royriojas/eslint-friendly-formatter/commit/4433a5e ), [Roy Riojas](https://github.com/Roy Riojas), 18/03/2015 02:15:50
     
 ## v1.0.4
 - **Build Scripts Changes**
