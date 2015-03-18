@@ -47,6 +47,7 @@
     "istanbul": "^0.3.8",
     "mocha-runner": "^1.0.8",
     "prepush": "^1.0.6",
+    "proxyquire": "^1.4.0",
     "read-file": "^0.1.2",
     "read-json-sync": "^1.1.0",
     "watch-spawn": "^1.0.3"
@@ -57,7 +58,7 @@
     "text-table": "^0.2.0"
   },
   "changelogx": {
-    "issueIDRegExp" : "#(\\d+)",
+    "issueIDRegExp": "#(\\d+)",
     "commitURL": "https://github.com/royriojas/eslint-friendly-formatter/commit/{0}",
     "authorURL": "https://github.com/{0}",
     "issueIDURL": "https://github.com/royriojas/eslint-friendly-formatter/issues/{0}",
