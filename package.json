@@ -19,6 +19,7 @@
     "beautify": "esbeautifier './index.js'",
     "beautify-check": "esbeautifier -k './index.js'",
     "eslint": "eslint --format './index.js' index.js test/ -c './configs/eslint.json'",
+    "lint": "npm run beautify && npm run eslint",
     "test": "mocha-runner 'test/specs/**/*.js'",
     "cover": "istanbul cover -x 'test/specs/**/*.js' mocha-runner 'test/specs/**/*.js' html text-summary",
     "watch": "npm run cover && watch-spawn -i -p 'test/specs/**/*.js' istanbul cover test/runner.js html text-summary",

@@ -36,12 +36,13 @@ module.exports = function ( results ) {
   results = results || [];
 
   var entries = [];
+  var path = require( 'path' );
 
   results.forEach( function ( result ) {
     var messages = result.messages || [];
     entries = entries.concat( messages.map( function ( message ) {
       return assign( {
-        filePath: result.filePath
+        filePath: path.resolve( result.filePath )
       }, message );
     } ) );
   } );
