@@ -54,5 +54,12 @@
     "chalk": "^1.0.0",
     "lodash.assign": "^3.0.0",
     "text-table": "^0.2.0"
+  },
+  "changelogx": {
+    "issueIDRegExp" : "#(\\d+)",
+    "commitURL": "https://github.com/royriojas/eslint-friendly-formatter/commit/{0}",
+    "authorURL": "https://github.com/{0}",
+    "issueIDURL": "https://github.com/royriojas/eslint-friendly-formatter/issues/{0}",
+    "projectName": "eslint-friendly-formatter"
   }
 }
