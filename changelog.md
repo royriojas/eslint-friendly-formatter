@@ -1,5 +1,26 @@
 
 # eslint-friendly-formatter - Changelog
+## v1.0.6
+- **Build Scripts Changes**
+  - Release v1.0.6 - [b09e7a6]( https://github.com/royriojas/eslint-friendly-formatter/commit/b09e7a6 ), [royriojas](https://github.com/royriojas), 16/05/2015 15:04:15
+    
+- **Bug Fixes**
+  - Support for solarized theme, or other themes that use gray for the background. Fixes [#2](https://github.com/royriojas/eslint-friendly-formatter/issues/2) - [a8c3c71]( https://github.com/royriojas/eslint-friendly-formatter/commit/a8c3c71 ), [royriojas](https://github.com/royriojas), 16/05/2015 15:02:33
+    Basically this fix removes the gray color if the environment variable `EFF_NO_GRAY`
+   is set to the string `true`.
+   
+   this can be done very easily in bash doing:
+   
+   ```bash
+   export EFF_NO_GRAY=true
+   ```
+   
+- **Other changes**
+  - quick hack for solarized support - [40415ab]( https://github.com/royriojas/eslint-friendly-formatter/commit/40415ab ), [April Arcus](https://github.com/April Arcus), 08/05/2015 22:18:55
+    
+- **Documentation**
+  - Added changelog - [d2afd28]( https://github.com/royriojas/eslint-friendly-formatter/commit/d2afd28 ), [Roy Riojas](https://github.com/Roy Riojas), 18/03/2015 02:37:10
+    
 ## v1.0.5
 - **Build Scripts Changes**
   - Release v1.0.5 - [86d90a3]( https://github.com/royriojas/eslint-friendly-formatter/commit/86d90a3 ), [Roy Riojas](https://github.com/Roy Riojas), 18/03/2015 02:36:35
