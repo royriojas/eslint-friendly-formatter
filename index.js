@@ -75,7 +75,7 @@ module.exports = function ( results ) {
             messageType,
             chalk.white( message.ruleId || '' ),
             message.message.replace( /\.$/, '' ),
-            '$MARKER$  ' + chalk.underline( chalk.gray( message.filePath + ':' + line + ':' + column ) ) + '$MARKER$  ' + chalk.gray( message.source ) + '$MARKER$  ' + chalk.gray( arrow ) + '$MARKER$'
+            '$MARKER$  ' + chalk.underline( message.filePath + ':' + line + ':' + column ) + '$MARKER$  ' + message.source + '$MARKER$  ' + arrow + '$MARKER$'
           ];
         } ), {
           align: [
