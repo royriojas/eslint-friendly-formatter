@@ -1,18 +1,19 @@
 
-  warning                   path is defined but never used                    
-  index.js:8:2
-    path = require( 'path' ),
-    ^
+  [33mwarning[39m                   path is defined but never used                    
+  [4m[90mindex.js:8:2[39m[24m
+  [90m  path = require( 'path' ),[39m
+  [90m  ^[39m
 
-  error                     Expected { after 'if' condition                   
-  test/runner.js:41:2
-    if ( err ) console.log( 'failed tests: ' + err );
-    ^
+  [31merror[39m                     Expected { after 'if' condition                   
+  [4m[90mtest/runner.js:41:2[39m[24m
+  [90m  if ( err ) console.log( 'failed tests: ' + err );[39m
+  [90m  ^[39m
 
-  error    no-process-exit  Don't use process.exit(); throw an error instead  
-  test/runner.js:42:2
-    process.exit( exitCode );
-    ^
+  [31merror[39m    [37mno-process-exit[39m  Don't use process.exit(); throw an error instead  
+  [4m[90mtest/runner.js:42:2[39m[24m
+  [90m  process.exit( exitCode );[39m
+  [90m  ^[39m
 
 
-✖ 3 problems (2 errors, 1 warning)
+[31m[1m✖ 3 problems (2 errors, 1 warning)
+[22m[39m

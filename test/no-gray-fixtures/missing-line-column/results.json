@@ -1,0 +1,37 @@
+[
+  {
+    "filePath": "index.js",
+    "messages": [
+      {
+        "severity": 1,
+        "message": "path is defined but never used",
+        "nodeType": "Identifier",
+        "source": "  path = require( 'path' ),"
+      }
+    ],
+    "errorCount": 0,
+    "warningCount": 1
+  },
+  {
+    "filePath": "test/runner.js",
+    "messages": [
+      {
+        "severity": 2,
+        "message": "Expected { after 'if' condition.",
+        "nodeType": "IfStatement",
+        "source": "  if ( err ) console.log( 'failed tests: ' + err );"
+      },
+      {
+        "ruleId": "no-process-exit",
+        "severity": 2,
+        "message": "Don't use process.exit(); throw an error instead.",
+        "line": 42,
+        "column": 2,
+        "nodeType": "CallExpression",
+        "source": "  process.exit( exitCode );"
+      }
+    ],
+    "errorCount": 2,
+    "warningCount": 0
+  }
+]
