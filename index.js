@@ -7,6 +7,8 @@ var chalk = require( 'chalk' ),
   table = require( 'text-table' ),
   assign = require( 'lodash.assign' );
 
+var process = require( './process' );
+
 //------------------------------------------------------------------------------
 // Helpers
 //------------------------------------------------------------------------------
@@ -20,6 +22,10 @@ var chalk = require( 'chalk' ),
 function pluralize( word, count ) {
   return (count === 1 ? word : word + 's');
 }
+
+var subtleLog = function ( args ) {
+  return process.env.EFF_NO_GRAY === 'true' ? args : chalk.gray( args );
+};
 
 //------------------------------------------------------------------------------
 // Public Interface
@@ -75,7 +81,7 @@ module.exports = function ( results ) {
             messageType,
             chalk.white( message.ruleId || '' ),
             message.message.replace( /\.$/, '' ),
-            '$MARKER$  ' + chalk.underline( chalk.gray( message.filePath + ':' + line + ':' + column ) ) + '$MARKER$  ' + chalk.gray( message.source ) + '$MARKER$  ' + chalk.gray( arrow ) + '$MARKER$'
+            '$MARKER$  ' + chalk.underline( subtleLog( message.filePath + ':' + line + ':' + column ) ) + '$MARKER$  ' + subtleLog( message.source ) + '$MARKER$  ' + subtleLog( arrow ) + '$MARKER$'
           ];
         } ), {
           align: [

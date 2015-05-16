@@ -18,7 +18,7 @@
   "scripts": {
     "beautify": "esbeautifier './index.js' 'test/specs/**/*.js'",
     "beautify-check": "esbeautifier -k './index.js' 'test/specs/**/*.js'",
-    "eslint": "eslint --format './index.js' index.js test/ -c './configs/eslint.json'",
+    "eslint": "eslint --format './index.js' index.js test/specs/ -c './configs/eslint.json'",
     "lint": "npm run beautify && npm run eslint",
     "test": "mocha-runner 'test/specs/**/*.js'",
     "cover": "istanbul cover -x 'test/specs/**/*.js' mocha-runner 'test/specs/**/*.js' html text-summary",
@@ -42,7 +42,7 @@
   "devDependencies": {
     "changelogx": "^1.0.5",
     "esbeautifier": "^2.0.1",
-    "eslint": "^0.17.1",
+    "eslint": "^0.21.1",
     "glob-expand": "^0.1.0",
     "istanbul": "^0.3.8",
     "mocha-runner": "^1.0.8",
@@ -50,7 +50,8 @@
     "proxyquire": "^1.4.0",
     "read-file": "^0.1.2",
     "read-json-sync": "^1.1.0",
-    "watch-spawn": "^1.0.3"
+    "watch-spawn": "^1.0.3",
+    "write": "^0.2.0"
   },
   "dependencies": {
     "chalk": "^1.0.0",
