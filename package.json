@@ -25,7 +25,7 @@
     "cover": "istanbul cover -x 'test/specs/**/*.js' mocha-runner 'test/specs/**/*.js' html text-summary",
     "watch": "npm run cover && watch-spawn -i -p 'test/specs/**/*.js' istanbul cover test/runner.js html text-summary",
     "check": "npm run beautify-check && npm run eslint",
-    "prepush": "npm run check && npm test",
+    "prepush": "npm run check && npm run test",
     "changelog": "changelogx -f markdown -o ./changelog.md",
     "install-hooks": "prepush install && changelogx install-hook"
   },
