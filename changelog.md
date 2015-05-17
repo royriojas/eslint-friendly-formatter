@@ -1,5 +1,13 @@
 
 # eslint-friendly-formatter - Changelog
+## HEAD
+- **Build Scripts Changes**
+  - Fix for [#3](https://github.com/royriojas/eslint-friendly-formatter/issues/3). eslint-friendly-formatter failing to install - [bd77638]( https://github.com/royriojas/eslint-friendly-formatter/commit/bd77638 ), [royriojas](https://github.com/royriojas), 17/05/2015 09:44:17
+    
+#### Changelog
+- **Documentation**
+  - updated the changelog - [dea8736]( https://github.com/royriojas/eslint-friendly-formatter/commit/dea8736 ), [royriojas](https://github.com/royriojas), 16/05/2015 15:05:58
+    
 ## v1.0.6
 - **Build Scripts Changes**
   - Release v1.0.6 - [b09e7a6]( https://github.com/royriojas/eslint-friendly-formatter/commit/b09e7a6 ), [royriojas](https://github.com/royriojas), 16/05/2015 15:04:15
