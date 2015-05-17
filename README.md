@@ -117,6 +117,7 @@ We use the gray color to show some info about the context where the error/warnin
 ```bash
 export EFF_NO_GRAY=true
 ```
+
 And the gray color won't be used.
 
 ## [Changelog](./changelog.md)
