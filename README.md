@@ -110,6 +110,14 @@ grunt.initConfig({
     }
 });
 ```
+## Disable the gray color output
+
+We use the gray color to show some info about the context where the error/warning happens. If for some reason you want to disable this (#2) you can do it using an environment variable.
+
+```bash
+export EFF_NO_GRAY=true
+```
+And the gray color won't be used.
 
 ## [Changelog](./changelog.md)
 
