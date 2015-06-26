@@ -114,7 +114,7 @@ grunt.initConfig({
 ```
 ## Disable the gray color output
 
-We use the gray color to show some info about the context where the error/warning happens. If for some reason you want to disable this [#2](https://github.com/royriojas/eslint-friendly-formatter/pull/2) you can do it using an environment variable.
+We use the gray color to show some info about the context where the error/warning happens. If for some reason you want to disable the gray color, [in cases like this one ](https://github.com/royriojas/eslint-friendly-formatter/pull/2), you can do it using an environment variable.
 
 ```bash
 export EFF_NO_GRAY=true
