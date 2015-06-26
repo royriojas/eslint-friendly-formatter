@@ -17,9 +17,11 @@ This module is based on the original `stylish` formatter that is now part of ESL
 
 - All the errors are reported at the end, so no more search for errors between tons of report lines
 - It also shows a bit of context where the error happened, Making easier to understand the nature of the error
-- If you use [iTerm2](http://iterm2.com/) the link for the file becomes clickable **and will open your editor at the given line**. 
+- If you use [iTerm2](http://iterm2.com/) or [Guake](http://guake-project.org/)\* the link for the file becomes clickable **and will open your editor at the given line**. 
   Please make sure you have properly configured the option to open uris that matches files with your editor of choice. 
   Sublime is a great choice!, but this should work as well with other editors that understand the pattern used by sublime 
+  
+  \* Note: Until Guake v0.7.3 is released, it may be necessary to compile master from source.
 
 ## Example of the output
 
