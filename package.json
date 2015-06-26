@@ -13,6 +13,9 @@
     "index.js",
     "process.js"
   ],
+  "bin": {
+    "eslint-friendly": "bin/eslint-friendly-formatter"
+  },
   "engines": {
     "node": ">=0.10.0"
   },
@@ -57,6 +60,7 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "lodash.assign": "^3.0.0",
+    "npm-which": "^2.0.0",
     "text-table": "^0.2.0"
   },
   "changelogx": {

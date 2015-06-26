@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+'use strict';
+
+var spawnSync = require('child_process').spawnSync;
+var path      = require('path');
+var which     = require('npm-which')(process.cwd());
+
+var formatter = path.resolve(__dirname + '/../index.js');
+var eslint    = which.sync('eslint');
+
+var args = [];
+if (process.argv.length > 2) {
+  Array.prototype.push.apply(args, process.argv.slice(2));
+};
+args.push('--format', formatter);
+
+spawnSync(eslint, args, { stdio: 'inherit' });
