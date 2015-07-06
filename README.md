@@ -38,7 +38,7 @@ npm i --save-dev eslint-friendly-formatter
 ```
 
 ## Intellij/Webstorm/PhpStorm integration
-0. Install `eslint` and `eslint-friendly-formatter`
+0. Install `eslint` and `eslint-friendly-formatter`.
    ```bash
    npm i -D eslint eslint-friendly-formatter
    ```
