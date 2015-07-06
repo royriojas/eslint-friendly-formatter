@@ -87,6 +87,21 @@ var output = formatter(results);
 console.log(output);
 
 ```
+It works with `gulp` and `gulp-eslint`
+
+```javascript
+var friendlyFormatter = require("eslint-friendly-formatter");
+// Your js task
+gulp.task("javascript", function() {
+  return gulp.src(["src/js/**/*.js"])
+    // Your eslint pipe
+    .pipe(eslint(".eslintrc"))
+    .pipe(eslint.format(friendlyFormatter))
+    // Continue your other tasks
+    .pipe(concat("app.js"))
+    .pipe(gulp.dest("dist/js"))
+});
+```
 
 It should work well in with eslint-grunt or grunt-eslint
 
