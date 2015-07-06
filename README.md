@@ -47,7 +47,7 @@ npm i --save-dev eslint-friendly-formatter
    ```javascript
    {
      "scripts": {
-       "eslint": "eslint --format 'node_modules/eslint-friendly-formatter' -c './configs/eslint.json' file1 file2 dir1/ dir2/",
+       "eslint": "eslint --format 'node_modules/eslint-friendly-formatter' file1 file2 dir1/ dir2/",
      }
    }
    ```
