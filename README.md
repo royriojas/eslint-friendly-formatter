@@ -42,6 +42,7 @@ npm i --save-dev eslint-friendly-formatter
    ```bash
    npm i -D eslint eslint-friendly-formatter
    ```
+
 1. Add a script to your package json like: 
    ```javascript
    {
