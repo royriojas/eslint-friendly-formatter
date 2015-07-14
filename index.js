@@ -5,7 +5,7 @@
 
 var chalk = require( 'chalk' ),
   table = require( 'text-table' ),
-  assign = require( 'lodash.assign' );
+  extend = require( 'extend' );
 
 var process = require( './process' );
 
@@ -23,8 +23,13 @@ function pluralize( word, count ) {
   return (count === 1 ? word : word + 's');
 }
 
+var parseBoolEnvVar = function ( varName ) {
+  var env = process.env || { };
+  return env[ varName ] === 'true';
+};
+
 var subtleLog = function ( args ) {
-  return process.env.EFF_NO_GRAY === 'true' ? args : chalk.gray( args );
+  return parseBoolEnvVar( 'EFF_NO_GRAY' ) ? args : chalk.gray( args );
 };
 
 //------------------------------------------------------------------------------
@@ -39,16 +44,16 @@ module.exports = function ( results ) {
     warnings = 0,
     summaryColor = 'yellow';
 
-  results = results || [];
+  results = results || [ ];
 
-  var entries = [];
+  var entries = [ ];
   var path = require( 'path' );
-
+  var absolutePathsToFile = parseBoolEnvVar( 'EFF_ABSOLUTE_PATHS' );
   results.forEach( function ( result ) {
-    var messages = result.messages || [];
+    var messages = result.messages || [ ];
     entries = entries.concat( messages.map( function ( message ) {
-      return assign( {
-        filePath: path.resolve( result.filePath )
+      return extend( {
+        filePath: absolutePathsToFile ? path.resolve( result.filePath ) : result.filePath
       }, message );
     } ) );
   } );

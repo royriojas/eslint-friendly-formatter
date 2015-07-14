@@ -20,9 +20,6 @@ describe( 'eslint-friendly-formatter', function () {
   describe( 'formatter', function () {
     var formatter = proxyquire( '../..', {
       path: {
-        resolve: function ( _path ) {
-          return _path;
-        }
       },
       './process': {
         env: {
@@ -47,11 +44,7 @@ describe( 'eslint-friendly-formatter', function () {
 
   describe( 'no gray', function () {
     var formatter = proxyquire( '../..', {
-      path: {
-        resolve: function ( _path ) {
-          return _path;
-        }
-      },
+      path: {},
       './process': {
         env: {
           EFF_NO_GRAY: 'true'
@@ -66,6 +59,65 @@ describe( 'eslint-friendly-formatter', function () {
         var results = readJsonFile( file );
         var output = formatter( results );
         //write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
+        var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
+
+        expect( output ).to.equal( resultText );
+      } );
+    } );
+  } );
+
+  describe( 'absolute paths to file', function () {
+    var formatter = proxyquire( '../..', {
+      path: {
+        resolve: function ( args ) {
+          return '/home/usr/roy/' + args;
+        }
+      },
+      './process': {
+        env: {
+          EFF_ABSOLUTE_PATHS: 'true'
+        }
+      }
+    } );
+    var files = expand( path.resolve( __dirname, '../absolute-paths/**/*.json' ) );
+
+    files.forEach( function ( file ) {
+      it( 'should produce the expected output for the given input: ' + path.basename( path.dirname( file ) ), function () {
+
+        var results = readJsonFile( file );
+        var output = formatter( results );
+        // var write = require('write').sync;
+        // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
+        var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
+
+        expect( output ).to.equal( resultText );
+      } );
+    } );
+  } );
+
+  describe( 'absolute paths to file, no gray', function () {
+    var formatter = proxyquire( '../..', {
+      path: {
+        resolve: function ( args ) {
+          return '/home/usr/roy/' + args;
+        }
+      },
+      './process': {
+        env: {
+          EFF_ABSOLUTE_PATHS: 'true',
+          EFF_NO_GRAY: 'true'
+        }
+      }
+    } );
+    var files = expand( path.resolve( __dirname, '../absolute-paths-no-gray/**/*.json' ) );
+
+    files.forEach( function ( file ) {
+      it( 'should produce the expected output for the given input: ' + path.basename( path.dirname( file ) ), function () {
+
+        var results = readJsonFile( file );
+        var output = formatter( results );
+        // var write = require('write').sync;
+        // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
         var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
 
         expect( output ).to.equal( resultText );

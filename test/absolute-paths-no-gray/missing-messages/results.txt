@@ -1,0 +1,14 @@
+
+  [31merror[39m       [37mcurly[39m       Expected { after 'if' condition                   
+  [4m/home/usr/roy/test/runner.js:41:2[24m
+    if ( err ) console.log( 'failed tests: ' + err );
+    ^
+
+  [31merror[39m  [37mno-process-exit[39m  Don't use process.exit(); throw an error instead  
+  [4m/home/usr/roy/test/runner.js:42:2[24m
+    process.exit( exitCode );
+    ^
+
+
+[31m[1m✖ 2 problems (2 errors, 0 warnings)
+[22m[39m

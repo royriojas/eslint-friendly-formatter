@@ -27,6 +27,7 @@
     "check": "npm run beautify-check && npm run eslint",
     "prepush": "npm run check && npm run test",
     "changelog": "changelogx -f markdown -o ./changelog.md",
+    "do-changelog": "npm run changelog && git add ./changelog.md && git commit -m 'DOC: Generate changelog'",
     "install-hooks": "prepush install && changelogx install-hook"
   },
   "keywords": [
@@ -34,21 +35,20 @@
     "formatter",
     "reporter",
     "eslint formatter",
-    "eslint-formatter",
     "stylish"
   ],
   "prepush": [
     "npm run prepush"
   ],
   "devDependencies": {
-    "changelogx": "^1.0.11",
-    "esbeautifier": "^2.0.1",
-    "eslint": "^0.21.1",
+    "changelogx": "^1.0.15",
+    "esbeautifier": "^3.2.0",
+    "eslint": "^0.24.1",
     "glob-expand": "^0.1.0",
-    "istanbul": "^0.3.8",
+    "istanbul": "^0.3.17",
     "mocha-runner": "^1.0.8",
     "prepush": "^2.0.4",
-    "proxyquire": "^1.4.0",
+    "proxyquire": "^1.6.0",
     "read-file": "^0.1.2",
     "read-json-sync": "^1.1.0",
     "watch-spawn": "^1.0.3",
@@ -56,7 +56,7 @@
   },
   "dependencies": {
     "chalk": "^1.0.0",
-    "lodash.assign": "^3.0.0",
+    "extend": "^3.0.0",
     "text-table": "^0.2.0"
   },
   "changelogx": {

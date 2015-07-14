@@ -1,0 +1,19 @@
+
+  [33mwarning[39m                   path is defined but never used                    
+  [4m/home/usr/roy/index.js:8:2[24m
+    path = require( 'path' ),
+    ^
+
+  [31merror[39m                     Expected { after 'if' condition                   
+  [4m/home/usr/roy/test/runner.js:41:2[24m
+    if ( err ) console.log( 'failed tests: ' + err );
+    ^
+
+  [31merror[39m    [37mno-process-exit[39m  Don't use process.exit(); throw an error instead  
+  [4m/home/usr/roy/test/runner.js:42:2[24m
+    process.exit( exitCode );
+    ^
+
+
+[31m[1m✖ 3 problems (2 errors, 1 warning)
+[22m[39m
