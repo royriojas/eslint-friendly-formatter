@@ -1,5 +1,14 @@
 
 # eslint-friendly-formatter - Changelog
+## v1.2.0
+- **Build Scripts Changes**
+  - Release v1.2.0 - [dd39097]( https://github.com/royriojas/eslint-friendly-formatter/commit/dd39097 ), [royriojas](https://github.com/royriojas), 14/08/2015 10:44:56
+
+    
+- **Documentation**
+  - Generate changelog - [b406eae]( https://github.com/royriojas/eslint-friendly-formatter/commit/b406eae ), [royriojas](https://github.com/royriojas), 14/08/2015 10:44:35
+
+    
 ## v1.1.1
 - **Build Scripts Changes**
   - Release v1.1.1 - [d107a4c]( https://github.com/royriojas/eslint-friendly-formatter/commit/d107a4c ), [royriojas](https://github.com/royriojas), 14/08/2015 10:44:34
