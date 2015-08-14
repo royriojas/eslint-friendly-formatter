@@ -155,6 +155,16 @@ Some terminals work better with relative paths (like `iTerm2` with `fish`) and o
 export EFF_ABSOLUTE_PATHS=true
 ```
 
+### EFF_EDITOR_SCHEME
+
+If this parameter is set, a url will be output below the filename.
+
+Some terminals only support clicking on urls, and editors can be configured to respond to custom url schemes.
+
+```bash
+export EFF_EDITOR_SCHEME=editor://open?file={file}&line={line}&column={column}
+```
+
 ## [Changelog](./changelog.md)
 
 ## License
