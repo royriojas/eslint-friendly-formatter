@@ -94,7 +94,7 @@ module.exports = function ( results ) {
 
           var arrow = '';
           for (var i = 0; i < message.column; i++) {
-            if ( message.source.charAt( i ) == '\t' ) {
+            if ( message.source.charAt( i ) === '\t' ) {
               arrow += '\t';
             } else {
               arrow += ' ';

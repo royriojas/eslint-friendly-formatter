@@ -1,6 +1,6 @@
 {
   "rules": {
-    "eqeqeq": 0,
+    "eqeqeq": [2, "smart"],
     "curly": 2,
     "quotes": [2, "single"],
     "strict": 0,
