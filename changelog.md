@@ -1,5 +1,33 @@
 
 # eslint-friendly-formatter - Changelog
+## v1.1.1
+- **Build Scripts Changes**
+  - Release v1.1.1 - [d107a4c]( https://github.com/royriojas/eslint-friendly-formatter/commit/d107a4c ), [royriojas](https://github.com/royriojas), 14/08/2015 10:44:34
+
+    
+  - add build scripts - [16d984b]( https://github.com/royriojas/eslint-friendly-formatter/commit/16d984b ), [royriojas](https://github.com/royriojas), 14/08/2015 10:44:15
+
+    
+  - Update deps - [3a23367]( https://github.com/royriojas/eslint-friendly-formatter/commit/3a23367 ), [royriojas](https://github.com/royriojas), 14/08/2015 10:39:20
+
+    
+- **Enhancements**
+  - Enforce the use of triple equal - [7cd1707]( https://github.com/royriojas/eslint-friendly-formatter/commit/7cd1707 ), [royriojas](https://github.com/royriojas), 14/08/2015 10:39:49
+
+    
+- **Other changes**
+  - Fix arrow's position when source code contains tabs. - [08612a4]( https://github.com/royriojas/eslint-friendly-formatter/commit/08612a4 ), [Nikola Kovacs](https://github.com/Nikola Kovacs), 14/08/2015 07:03:37
+
+    Fixes <a target="_blank" class="info-link" href="https://github.com/royriojas/eslint-friendly-formatter/issues/10"><span>#10</span></a>
+    
+  - add support for editor urls - [3e35a8b]( https://github.com/royriojas/eslint-friendly-formatter/commit/3e35a8b ), [Nikola Kovacs](https://github.com/Nikola Kovacs), 14/08/2015 06:37:28
+
+    Fixes <a target="_blank" class="info-link" href="https://github.com/royriojas/eslint-friendly-formatter/issues/8"><span>#8</span></a>
+    
+- **Documentation**
+  - Generate changelog - [35cea13]( https://github.com/royriojas/eslint-friendly-formatter/commit/35cea13 ), [royriojas](https://github.com/royriojas), 13/07/2015 23:29:37
+
+    
 ## v1.1.0
 - **Build Scripts Changes**
   - Release v1.1.0 - [afa0c60]( https://github.com/royriojas/eslint-friendly-formatter/commit/afa0c60 ), [royriojas](https://github.com/royriojas), 13/07/2015 23:28:33
