@@ -32,6 +32,19 @@ var subtleLog = function ( args ) {
   return parseBoolEnvVar( 'EFF_NO_GRAY' ) ? args : chalk.gray( args );
 };
 
+var getEnvVar = function ( varName ) {
+  var env = process.env || { };
+  return env[ varName ] || false;
+};
+
+var getFileLink = function ( path, line, column ) {
+  var scheme = getEnvVar( 'EFF_EDITOR_SCHEME' );
+  if ( scheme === false ) {
+    return false;
+  }
+  return scheme.replace( '{file}', encodeURIComponent( path ) ).replace( '{line}', line ).replace( '{column}', column );
+};
+
 //------------------------------------------------------------------------------
 // Public Interface
 //------------------------------------------------------------------------------
@@ -81,12 +94,16 @@ module.exports = function ( results ) {
 
           var arrow = (new Array( column + 1 )).join( ' ' ) + '^';
 
+          var filePath = message.filePath;
+          var link = getFileLink( filePath, line, column );
+          var filename = subtleLog( filePath + ':' + line + ':' + column );
+
           return [
             '',
             messageType,
             chalk.white( message.ruleId || '' ),
             message.message.replace( /\.$/, '' ),
-            '$MARKER$  ' + chalk.underline( subtleLog( message.filePath + ':' + line + ':' + column ) ) + '$MARKER$  ' + subtleLog( message.source ) + '$MARKER$  ' + subtleLog( arrow ) + '$MARKER$'
+            '$MARKER$  ' + (link === false ? chalk.underline( filename ) : filename) + (link === false ? '' : '$MARKER$  ' + chalk.underline( subtleLog( link ) )) + '$MARKER$  ' + subtleLog( message.source ) + '$MARKER$  ' + subtleLog( arrow ) + '$MARKER$'
           ];
         } ), {
           align: [

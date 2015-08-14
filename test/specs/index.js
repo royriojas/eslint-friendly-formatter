@@ -95,6 +95,36 @@ describe( 'eslint-friendly-formatter', function () {
     } );
   } );
 
+  describe( 'scheme', function () {
+    var formatter = proxyquire( '../..', {
+      path: {
+        resolve: function ( args ) {
+          return '/home/usr/roy/' + args;
+        }
+      },
+      './process': {
+        env: {
+          EFF_ABSOLUTE_PATHS: 'true',
+          EFF_EDITOR_SCHEME: 'editor://open?file={file}&line={line}&column={column}'
+        }
+      }
+    } );
+    var files = expand( path.resolve( __dirname, '../scheme/**/*.json' ) );
+
+    files.forEach( function ( file ) {
+      it( 'should produce the expected output for the given input: ' + path.basename( path.dirname( file ) ), function () {
+
+        var results = readJsonFile( file );
+        var output = formatter( results );
+        // var write = require('write').sync;
+        // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
+        var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
+
+        expect( output ).to.equal( resultText );
+      } );
+    } );
+  } );
+
   describe( 'absolute paths to file, no gray', function () {
     var formatter = proxyquire( '../..', {
       path: {

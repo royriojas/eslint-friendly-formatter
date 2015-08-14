@@ -1,0 +1,22 @@
+
+  [33mwarning[39m                   path is defined but never used                    
+  [90m/home/usr/roy/index.js:0:0[39m
+  [4m[90meditor://open?file=%2Fhome%2Fusr%2Froy%2Findex.js&line=0&column=0[39m[24m
+  [90m  path = require( 'path' ),[39m
+  [90m^[39m
+
+  [31merror[39m                     Expected { after 'if' condition                   
+  [90m/home/usr/roy/test/runner.js:0:0[39m
+  [4m[90meditor://open?file=%2Fhome%2Fusr%2Froy%2Ftest%2Frunner.js&line=0&column=0[39m[24m
+  [90m  if ( err ) console.log( 'failed tests: ' + err );[39m
+  [90m^[39m
+
+  [31merror[39m    [37mno-process-exit[39m  Don't use process.exit(); throw an error instead  
+  [90m/home/usr/roy/test/runner.js:42:2[39m
+  [4m[90meditor://open?file=%2Fhome%2Fusr%2Froy%2Ftest%2Frunner.js&line=42&column=2[39m[24m
+  [90m  process.exit( exitCode );[39m
+  [90m  ^[39m
+
+
+[31m[1m✖ 3 problems (2 errors, 1 warning)
+[22m[39m
