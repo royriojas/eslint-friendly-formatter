@@ -41,13 +41,14 @@
     "npm run prepush"
   ],
   "devDependencies": {
-    "changelogx": "^1.0.15",
-    "esbeautifier": "^3.2.0",
+    "changelogx": "^1.0.18",
+    "esbeautifier": "^4.2.9",
     "eslint": "^0.24.1",
     "glob-expand": "^0.1.0",
     "istanbul": "^0.3.17",
     "mocha-runner": "^1.0.8",
-    "prepush": "^2.0.4",
+    "precommit": "^1.1.5",
+    "prepush": "^3.1.4",
     "proxyquire": "^1.6.0",
     "read-file": "^0.1.2",
     "read-json-sync": "^1.1.0",
