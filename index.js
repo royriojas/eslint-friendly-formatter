@@ -79,7 +79,16 @@ module.exports = function ( results ) {
           var line = message.line || 0;
           var column = message.column || 0;
 
-          var arrow = (new Array( column + 1 )).join( ' ' ) + '^';
+          var arrow = '';
+          for (var i = 0; i < message.column; i++) {
+            if ( message.source.charAt( i ) == '\t' ) {
+              arrow += '\t';
+            } else {
+              arrow += ' ';
+            }
+          }
+          arrow += '^';
+
 
           return [
             '',
