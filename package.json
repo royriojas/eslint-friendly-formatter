@@ -25,10 +25,15 @@
     "cover": "istanbul cover -x 'test/specs/**/*.js' mocha-runner 'test/specs/**/*.js' html text-summary",
     "watch": "npm run cover && watch-spawn -i -p 'test/specs/**/*.js' istanbul cover test/runner.js html text-summary",
     "check": "npm run beautify-check && npm run eslint",
-    "prepush": "npm run check && npm run test",
+    "verify": "npm run check && npm test",
     "changelog": "changelogx -f markdown -o ./changelog.md",
-    "do-changelog": "npm run changelog && git add ./changelog.md && git commit -m 'DOC: Generate changelog'",
-    "install-hooks": "prepush install && changelogx install-hook"
+    "do-changelog": "npm run changelog && git add ./changelog.md && git commit -m 'DOC: Generate changelog' --no-verify",
+    "install-hooks": "prepush install && changelogx install-hook && precommit install",
+    "pre-v": "npm run verify",
+    "post-v": "npm run do-changelog && git push --no-verify && git push --tags --no-verify",
+    "bump-major": "npm run pre-v && npm version major -m 'BLD: Release v%s' && npm run post-v",
+    "bump-minor": "npm run pre-v && npm version minor -m 'BLD: Release v%s' && npm run post-v",
+    "bump-patch": "npm run pre-v && npm version patch -m 'BLD: Release v%s' && npm run post-v"
   },
   "keywords": [
     "eslint",
@@ -38,7 +43,10 @@
     "stylish"
   ],
   "prepush": [
-    "npm run prepush"
+    "npm run verify"
+  ],
+  "precommit": [
+    "npm run verify"
   ],
   "devDependencies": {
     "changelogx": "^1.0.18",
