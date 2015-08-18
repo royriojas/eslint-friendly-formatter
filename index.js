@@ -93,14 +93,17 @@ module.exports = function ( results ) {
           var column = message.column || 0;
 
           var arrow = '';
-          for (var i = 0; i < message.column; i++) {
-            if ( message.source.charAt( i ) === '\t' ) {
-              arrow += '\t';
-            } else {
-              arrow += ' ';
+          var hasSource = message.source !== undefined;
+          if ( hasSource ) {
+            for (var i = 0; i < message.column; i++) {
+              if ( message.source.charAt( i ) === '\t' ) {
+                arrow += '\t';
+              } else {
+                arrow += ' ';
+              }
             }
+            arrow += '^';
           }
-          arrow += '^';
 
 
           var filePath = message.filePath;
@@ -112,7 +115,9 @@ module.exports = function ( results ) {
             messageType,
             chalk.white( message.ruleId || '' ),
             message.message.replace( /\.$/, '' ),
-            '$MARKER$  ' + (link === false ? chalk.underline( filename ) : filename) + (link === false ? '' : '$MARKER$  ' + chalk.underline( subtleLog( link ) )) + '$MARKER$  ' + subtleLog( message.source ) + '$MARKER$  ' + subtleLog( arrow ) + '$MARKER$'
+            '$MARKER$  ' + (link === false ? chalk.underline( filename ) : filename) +
+              (link === false ? '' : '$MARKER$  ' + chalk.underline( subtleLog( link ) )) + '$MARKER$  ' +
+              (hasSource ? subtleLog( message.source ) + '$MARKER$  ' + subtleLog( arrow ) : '') + '$MARKER$'
           ];
         } ), {
           align: [
