@@ -1,5 +1,22 @@
 
 # eslint-friendly-formatter - Changelog
+## v1.2.1
+- **Build Scripts Changes**
+  - Release v1.2.1 - [f644f53]( https://github.com/royriojas/eslint-friendly-formatter/commit/f644f53 ), [royriojas](https://github.com/royriojas), 19/08/2015 03:39:25
+
+    
+- **Other changes**
+  - add tests for errors without source info - [1b61a9d]( https://github.com/royriojas/eslint-friendly-formatter/commit/1b61a9d ), [Nikola Kovacs](https://github.com/Nikola Kovacs), 19/08/2015 01:48:07
+
+    
+  - Fix error when message.source is undefined. - [7a3f6f7]( https://github.com/royriojas/eslint-friendly-formatter/commit/7a3f6f7 ), [Nikola Kovacs](https://github.com/Nikola Kovacs), 18/08/2015 07:28:56
+
+    This happens when the javascript file has a parsing error.
+    
+- **Documentation**
+  - Generate changelog - [7021114]( https://github.com/royriojas/eslint-friendly-formatter/commit/7021114 ), [royriojas](https://github.com/royriojas), 14/08/2015 10:44:57
+
+    
 ## v1.2.0
 - **Build Scripts Changes**
   - Release v1.2.0 - [dd39097]( https://github.com/royriojas/eslint-friendly-formatter/commit/dd39097 ), [royriojas](https://github.com/royriojas), 14/08/2015 10:44:56
