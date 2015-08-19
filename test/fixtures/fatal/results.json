@@ -1,0 +1,16 @@
+[
+  {
+    "filePath": "index.js",
+    "messages": [
+      {
+        "fatal": true,
+        "severity": 2,
+        "message": "Unexpected token {",
+        "line": 3,
+        "column": 13
+      }
+    ],
+    "errorCount": 0,
+    "warningCount": 1
+  }
+]
