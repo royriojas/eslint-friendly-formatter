@@ -62,6 +62,7 @@ module.exports = function ( results ) {
   var entries = [ ];
   var path = require( 'path' );
   var absolutePathsToFile = parseBoolEnvVar( 'EFF_ABSOLUTE_PATHS' );
+
   results.forEach( function ( result ) {
     var messages = result.messages || [ ];
     entries = entries.concat( messages.map( function ( message ) {
@@ -93,7 +94,7 @@ module.exports = function ( results ) {
           var column = message.column || 0;
 
           var arrow = '';
-          var hasSource = message.source !== undefined;
+          var hasSource = message.source !== undefined && message.source.length < 1000;
           if ( hasSource ) {
             for (var i = 0; i < message.column; i++) {
               if ( message.source.charAt( i ) === '\t' ) {
@@ -104,7 +105,6 @@ module.exports = function ( results ) {
             }
             arrow += '^';
           }
-
 
           var filePath = message.filePath;
           var link = getFileLink( filePath, line, column );
