@@ -39,11 +39,13 @@ npm i --save-dev eslint-friendly-formatter
 
 ## Intellij/Webstorm/PhpStorm integration
 0. Install `eslint` and `eslint-friendly-formatter`.
+  
    ```bash
    npm i -D eslint eslint-friendly-formatter
    ```
 
 1. Add a script to your package json like:
+  
    ```javascript
    {
      "scripts": {
@@ -56,7 +58,9 @@ npm i --save-dev eslint-friendly-formatter
    - program: `npm`
    - parameters: `run eslint`
    - working directory: `$ProjectFileDir$`
+
 2. Use an output filter like: (Please note the 2 spaces before `$FILE_PATH$`)
+
    ```bash
      $FILE_PATH$.*:$LINE$.*:$COLUMN$
    ```
@@ -71,6 +75,7 @@ In the command line
 # just make sure you pass the path to the module to the format option of eslint
 eslint.js --format './node_modules/eslint-friendly-formatter/index.js' index.js test/ -c './eslint.json'
 ```
+
 Or as a module
 
 ```javascript
