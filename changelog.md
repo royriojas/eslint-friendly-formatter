@@ -1,5 +1,22 @@
 
 # eslint-friendly-formatter - Changelog
+## v1.2.2
+- **Build Scripts Changes**
+  - Release v1.2.2 - [7410804]( https://github.com/royriojas/eslint-friendly-formatter/commit/7410804 ), [Roy Riojas](https://github.com/Roy Riojas), 30/08/2015 06:40:16
+
+    
+- **Features**
+  - Ignore source code when the source property is really (really) long!. Fixes [#13](https://github.com/royriojas/eslint-friendly-formatter/issues/13) - [a19ff73]( https://github.com/royriojas/eslint-friendly-formatter/commit/a19ff73 ), [Roy Riojas](https://github.com/Roy Riojas), 30/08/2015 06:36:40
+
+    
+- **Other changes**
+  - Update README.md - [93c77a1]( https://github.com/royriojas/eslint-friendly-formatter/commit/93c77a1 ), [Roy Riojas](https://github.com/Roy Riojas), 29/08/2015 23:45:55
+
+    
+- **Documentation**
+  - Generate changelog - [691e0f8]( https://github.com/royriojas/eslint-friendly-formatter/commit/691e0f8 ), [royriojas](https://github.com/royriojas), 19/08/2015 03:39:27
+
+    
 ## v1.2.1
 - **Build Scripts Changes**
   - Release v1.2.1 - [f644f53]( https://github.com/royriojas/eslint-friendly-formatter/commit/f644f53 ), [royriojas](https://github.com/royriojas), 19/08/2015 03:39:25
