@@ -1,14 +1,18 @@
 
-  [31merror[39m       [37mcurly[39m       Expected { after 'if' condition                   
+  [31m✘[39m  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m            Expected { after 'if' condition                   
   [4mtest/runner.js:41:2[24m
     if ( err ) console.log( 'failed tests: ' + err );
     ^
 
-  [31merror[39m  [37mno-process-exit[39m  Don't use process.exit(); throw an error instead  
+  [31m✘[39m  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m  Don't use process.exit(); throw an error instead  
   [4mtest/runner.js:42:2[24m
     process.exit( exitCode );
     ^
 
 
-[31m[1m✖ 2 problems (2 errors, 0 warnings)
+[31m[1m✘ 2 problems (2 errors, 0 warnings)
 [22m[39m
+
+[31mErrors:
+[39m  1  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m
+  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m

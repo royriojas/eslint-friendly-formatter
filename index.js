@@ -45,6 +45,29 @@ var getFileLink = function ( path, line, column ) {
   return scheme.replace( '{file}', encodeURIComponent( path ) ).replace( '{line}', line ).replace( '{column}', column );
 };
 
+
+var printSummary = function ( hash, title, method ) {
+  var res = '\n\n' + chalk[ method ]( title + ':\n' );
+  res += table(
+    Object.keys( hash ).map( function ( key ) {
+      return [
+        '',
+        hash[ key ],
+        chalk.underline( subtleLog( 'http://eslint.org/docs/rules/' + chalk.white( key ) ) )
+      ];
+    } ), {
+      align: [
+        '',
+        'l',
+        'l'
+      ],
+      stringLength: function ( str ) {
+        return chalk.stripColor( str ).length;
+      }
+    } );
+  return res;
+};
+
 //------------------------------------------------------------------------------
 // Public Interface
 //------------------------------------------------------------------------------
@@ -57,14 +80,17 @@ module.exports = function ( results ) {
     warnings = 0,
     summaryColor = 'yellow';
 
-  results = results || [ ];
+  results = results || [];
 
-  var entries = [ ];
+  var entries = [];
   var path = require( 'path' );
   var absolutePathsToFile = parseBoolEnvVar( 'EFF_ABSOLUTE_PATHS' );
 
+  var errorsHash = { };
+  var warningsHash = { };
+
   results.forEach( function ( result ) {
-    var messages = result.messages || [ ];
+    var messages = result.messages || [];
     entries = entries.concat( messages.map( function ( message ) {
       return extend( {
         filePath: absolutePathsToFile ? path.resolve( result.filePath ) : result.filePath
@@ -76,17 +102,18 @@ module.exports = function ( results ) {
     return a.severity > b.severity ? 1 : -1;
   } );
 
-
   output += table(
         entries.map( function ( message ) {
           var messageType;
 
           if ( message.fatal || message.severity === 2 ) {
-            messageType = chalk.red( 'error' );
+            messageType = chalk.red( '✘' );
             summaryColor = 'red';
+            errorsHash[ message.ruleId ] = (errorsHash[ message.ruleId ] || 0) + 1;
             errors++;
           } else {
-            messageType = chalk.yellow( 'warning' );
+            messageType = chalk.yellow( '⚠' );
+            warningsHash[ message.ruleId ] = (warningsHash[ message.ruleId ] || 0) + 1;
             warnings++;
           }
 
@@ -112,8 +139,7 @@ module.exports = function ( results ) {
 
           return [
             '',
-            messageType,
-            chalk.white( message.ruleId || '' ),
+            messageType + '  ' + chalk.underline( subtleLog( 'http://eslint.org/docs/rules/' + chalk.white( message.ruleId || '' ) ) ),
             message.message.replace( /\.$/, '' ),
             '$MARKER$  ' + (link === false ? chalk.underline( filename ) : filename) +
               (link === false ? '' : '$MARKER$  ' + chalk.underline( subtleLog( link ) )) + '$MARKER$  ' +
@@ -123,7 +149,6 @@ module.exports = function ( results ) {
           align: [
             '',
             'l',
-            'c',
             'l',
             'l'
           ],
@@ -136,7 +161,7 @@ module.exports = function ( results ) {
 
   if ( total > 0 ) {
     output += chalk[ summaryColor ].bold( [
-      '\u2716 ',
+      '✘ ',
       total,
       pluralize( ' problem', total ),
       ' (',
@@ -147,6 +172,14 @@ module.exports = function ( results ) {
       pluralize( ' warning', warnings ),
       ')\n'
     ].join( '' ) );
+
+    if ( errors > 0 ) {
+      output += printSummary( errorsHash, 'Errors', 'red' );
+    }
+
+    if ( warnings > 0 ) {
+      output += printSummary( warningsHash, 'Warnings', 'yellow' );
+    }
   }
 
   return total > 0 ? output : '';

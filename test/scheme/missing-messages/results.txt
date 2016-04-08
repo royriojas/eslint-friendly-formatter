@@ -1,16 +1,20 @@
 
-  [31merror[39m       [37mcurly[39m       Expected { after 'if' condition                   
+  [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m            Expected { after 'if' condition                   
   [90m/home/usr/roy/test/runner.js:41:2[39m
   [4m[90meditor://open?file=%2Fhome%2Fusr%2Froy%2Ftest%2Frunner.js&line=41&column=2[39m[24m
   [90m  if ( err ) console.log( 'failed tests: ' + err );[39m
   [90m  ^[39m
 
-  [31merror[39m  [37mno-process-exit[39m  Don't use process.exit(); throw an error instead  
+  [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m  Don't use process.exit(); throw an error instead  
   [90m/home/usr/roy/test/runner.js:42:2[39m
   [4m[90meditor://open?file=%2Fhome%2Fusr%2Froy%2Ftest%2Frunner.js&line=42&column=2[39m[24m
   [90m  process.exit( exitCode );[39m
   [90m  ^[39m
 
 
-[31m[1m✖ 2 problems (2 errors, 0 warnings)
+[31m[1m✘ 2 problems (2 errors, 0 warnings)
 [22m[39m
+
+[31mErrors:
+[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m
+  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m

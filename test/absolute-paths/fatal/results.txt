@@ -1,8 +1,11 @@
 
-  [31merror[39m    Unexpected token {  
+  [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m  Unexpected token {  
   [4m[90m/home/usr/roy/index.js:3:13[39m[24m
   
 
 
-[31m[1m✖ 1 problem (1 error, 0 warnings)
+[31m[1m✘ 1 problem (1 error, 0 warnings)
 [22m[39m
+
+[31mErrors:
+[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m

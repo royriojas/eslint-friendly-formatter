@@ -50,7 +50,7 @@
   ],
   "devDependencies": {
     "changelogx": "^1.0.18",
-    "esbeautifier": "^4.2.9",
+    "esbeautifier": "^9.0.0",
     "eslint": "^0.24.1",
     "glob-expand": "^0.1.0",
     "istanbul": "^0.3.17",

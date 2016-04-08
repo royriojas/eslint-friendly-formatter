@@ -1,29 +1,36 @@
 
-  [33mwarning[39m   [37mno-unused-vars[39m  path is defined but never used                    
+  [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m   path is defined but never used                    
   [4mindex.js:8:2[24m
     path = require( 'path' ),
     ^
 
-  [33mwarning[39m   [37mno-unused-vars[39m  expect is defined but never used                  
+  [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m   expect is defined but never used                  
   [4mtest/specs/index.js:3:6[24m
     var expect = require( 'chai' ).expect;
         ^
 
-  [33mwarning[39m   [37mno-unused-vars[39m  path is defined but never used                    
+  [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m   path is defined but never used                    
   [4mtest/specs/index.js:4:6[24m
     var path = require( 'path' );
         ^
 
-  [31merror[39m         [37mcurly[39m       Expected { after 'if' condition                   
+  [31m✘[39m  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m            Expected { after 'if' condition                   
   [4mtest/runner.js:41:2[24m
     if ( err ) console.log( 'failed tests: ' + err );
     ^
 
-  [31merror[39m    [37mno-process-exit[39m  Don't use process.exit(); throw an error instead  
+  [31m✘[39m  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m  Don't use process.exit(); throw an error instead  
   [4mtest/runner.js:42:2[24m
     process.exit( exitCode );
     ^
 
 
-[31m[1m✖ 5 problems (2 errors, 3 warnings)
+[31m[1m✘ 5 problems (2 errors, 3 warnings)
 [22m[39m
+
+[31mErrors:
+[39m  1  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m
+  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
+
+[33mWarnings:
+[39m  3  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m

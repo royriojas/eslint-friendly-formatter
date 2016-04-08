@@ -16,6 +16,8 @@ the error was reported. This module fixes that issue, by using the syntax that "
 This module is based on the original `stylish` formatter that is now part of ESLint, it adds the following
 
 - All the errors are reported at the end, so no more search for errors between tons of report lines
+- RuleIds are clickable on terminals like iTerm2 and take you to the ruleId documentation site.
+- A summary is shown at the end with the offended ruleIds, ruleIds are also clickable.
 - It also shows a bit of context where the error happened, Making easier to understand the nature of the error
 - If you use [iTerm2](http://iterm2.com/) or [Guake](http://guake-project.org/)\* the link for the file becomes clickable **and will open your editor at the given line**.
   Please make sure you have properly configured the option to open uris that matches files with your editor of choice.
@@ -25,11 +27,7 @@ This module is based on the original `stylish` formatter that is now part of ESL
 
 ## Example of the output
 
-- Example 1
-  ![screenshot](screenshot.png)
-
-- Example 2
-  ![screenshot](screenshot2.png)
+![screenshot](clickable-rules.png)
 
 ## install
 
@@ -39,13 +37,13 @@ npm i --save-dev eslint-friendly-formatter
 
 ## Intellij/Webstorm/PhpStorm integration
 0. Install `eslint` and `eslint-friendly-formatter`.
-  
+
    ```bash
    npm i -D eslint eslint-friendly-formatter
    ```
 
 1. Add a script to your package json like:
-  
+
    ```javascript
    {
      "scripts": {
