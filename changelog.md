@@ -1,5 +1,28 @@
 
 # eslint-friendly-formatter - Changelog
+## v2.0.1
+- **Build Scripts Changes**
+  - Release v2.0.1 - [69f49ac]( https://github.com/royriojas/eslint-friendly-formatter/commit/69f49ac ), [Roy Riojas](https://github.com/Roy Riojas), 10/04/2016 02:47:24
+
+    
+- **Refactoring**
+  - Add `EFF_NO_LINK_RULES` param. Fixes [#18](https://github.com/royriojas/eslint-friendly-formatter/issues/18) - [7ed4647]( https://github.com/royriojas/eslint-friendly-formatter/commit/7ed4647 ), [Roy Riojas](https://github.com/Roy Riojas), 10/04/2016 02:44:06
+
+    - In your terminal run
+    
+    ```bash
+    export EFF_NO_LINK_RULES=true # rules ids won't be linked to
+    documentation
+    ```
+    
+    Also as part of this commit, rules that contain `/`, a common pattern
+    in eslint plugins, like `react/jsx-quotes` will generate a link
+    to a google search for that rule.
+    
+- **Documentation**
+  - Generate changelog - [70f02c4]( https://github.com/royriojas/eslint-friendly-formatter/commit/70f02c4 ), [Roy Riojas](https://github.com/Roy Riojas), 08/04/2016 17:00:52
+
+    
 ## v2.0.0
 - **Build Scripts Changes**
   - Release v2.0.0 - [1b420f4]( https://github.com/royriojas/eslint-friendly-formatter/commit/1b420f4 ), [Roy Riojas](https://github.com/Roy Riojas), 08/04/2016 17:00:51
