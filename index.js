@@ -45,6 +45,11 @@ var getFileLink = function ( path, line, column ) {
   return scheme.replace( '{file}', encodeURIComponent( path ) ).replace( '{line}', line ).replace( '{column}', column );
 };
 
+var getKeyLink = function ( key ) {
+  var noLinkRules = parseBoolEnvVar( 'EFF_NO_LINK_RULES' );
+  var url = key.indexOf( '/' ) > -1 ? 'https://google.com/#q=' : 'http://eslint.org/docs/rules/';
+  return (!noLinkRules) ? chalk.underline( subtleLog( url + chalk.white( encodeURIComponent( key ) ) ) ) : chalk.white( key );
+};
 
 var printSummary = function ( hash, title, method ) {
   var res = '\n\n' + chalk[ method ]( title + ':\n' );
@@ -53,12 +58,12 @@ var printSummary = function ( hash, title, method ) {
       return [
         '',
         hash[ key ],
-        chalk.underline( subtleLog( 'http://eslint.org/docs/rules/' + chalk.white( key ) ) )
+        getKeyLink( key )
       ];
     } ), {
       align: [
         '',
-        'l',
+        'r',
         'l'
       ],
       stringLength: function ( str ) {
@@ -139,7 +144,7 @@ module.exports = function ( results ) {
 
           return [
             '',
-            messageType + '  ' + chalk.underline( subtleLog( 'http://eslint.org/docs/rules/' + chalk.white( message.ruleId || '' ) ) ),
+            messageType + '  ' + getKeyLink( message.ruleId || '' ),
             message.message.replace( /\.$/, '' ),
             '$MARKER$  ' + (link === false ? chalk.underline( filename ) : filename) +
               (link === false ? '' : '$MARKER$  ' + chalk.underline( subtleLog( link ) )) + '$MARKER$  ' +

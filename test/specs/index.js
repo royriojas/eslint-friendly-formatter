@@ -4,8 +4,8 @@ describe( 'eslint-friendly-formatter', function () {
   var expand = require( 'glob-expand' );
   var readJSON = require( 'read-json-sync' );
   var read = require( 'read-file' ).readFileSync;
-  //var chalk = require( 'chalk' );
-  //var write = require( 'write' ).sync;
+
+  // var write = require( 'write' ).sync;
   var path = require( 'path' );
   var proxyquire = require( 'proxyquire' );
 
@@ -34,7 +34,7 @@ describe( 'eslint-friendly-formatter', function () {
 
         var results = readJsonFile( file );
         var output = formatter( results );
-        //write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
+        // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
         var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
         expect( output ).to.equal( resultText );
 
@@ -58,9 +58,8 @@ describe( 'eslint-friendly-formatter', function () {
 
         var results = readJsonFile( file );
         var output = formatter( results );
-        //write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
+        // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
         var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
-
         expect( output ).to.equal( resultText );
       } );
     } );
@@ -86,10 +85,8 @@ describe( 'eslint-friendly-formatter', function () {
 
         var results = readJsonFile( file );
         var output = formatter( results );
-        // var write = require('write').sync;
         // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
         var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
-
         expect( output ).to.equal( resultText );
       } );
     } );
@@ -116,10 +113,8 @@ describe( 'eslint-friendly-formatter', function () {
 
         var results = readJsonFile( file );
         var output = formatter( results );
-        // var write = require('write').sync;
         // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
         var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
-
         expect( output ).to.equal( resultText );
       } );
     } );
@@ -146,10 +141,63 @@ describe( 'eslint-friendly-formatter', function () {
 
         var results = readJsonFile( file );
         var output = formatter( results );
-        // var write = require('write').sync;
         // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
         var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
+        expect( output ).to.equal( resultText );
+      } );
+    } );
+  } );
 
+  describe( 'no links to rules', function () {
+    var formatter = proxyquire( '../..', {
+      path: {
+        resolve: function ( args ) {
+          return '/home/usr/roy/' + args;
+        }
+      },
+      './process': {
+        env: {
+          EFF_NO_LINK_RULES: 'true'
+        }
+      }
+    } );
+    var files = expand( path.resolve( __dirname, '../no-links/**/*.json' ) );
+
+    files.forEach( function ( file ) {
+      it( 'should produce the expected output for the given input: ' + path.basename( path.dirname( file ) ), function () {
+
+        var results = readJsonFile( file );
+        var output = formatter( results );
+        // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
+        var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
+        expect( output ).to.equal( resultText );
+      } );
+    } );
+  } );
+
+  describe( 'custom rules links open google search', function () {
+    var formatter = proxyquire( '../..', {
+      path: {
+        resolve: function ( args ) {
+          return '/home/usr/roy/' + args;
+        }
+      },
+      './process': {
+        env: {
+          EFF_NO_LINK_RULES: 'false'
+        }
+      }
+    } );
+    var files = expand( path.resolve( __dirname, '../plugin-rules/**/*.json' ) );
+
+    files.forEach( function ( file ) {
+      it( 'should produce the expected output for the given input: ' + path.basename( path.dirname( file ) ), function () {
+
+        var results = readJsonFile( file );
+        var output = formatter( results );
+        // var write = require( 'write' ).sync;
+        // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
+        var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
         expect( output ).to.equal( resultText );
       } );
     } );

@@ -1,0 +1,26 @@
+
+  [33m⚠[39m                   path is defined but never used                    
+  [4m[90mindex.js:0:0[39m[24m
+  [90m  path = require( 'path' ),[39m
+  [90m^[39m
+
+  [31m✘[39m                   Expected { after 'if' condition                   
+  [4m[90mtest/runner.js:0:0[39m[24m
+  [90m  if ( err ) console.log( 'failed tests: ' + err );[39m
+  [90m^[39m
+
+  [31m✘[39m  [37mno-process-exit[39m  Don't use process.exit(); throw an error instead  
+  [4m[90mtest/runner.js:42:2[39m[24m
+  [90m  process.exit( exitCode );[39m
+  [90m  ^[39m
+
+
+[31m[1m✘ 3 problems (2 errors, 1 warning)
+[22m[39m
+
+[31mErrors:
+[39m  1  [37mundefined[39m
+  1  [37mno-process-exit[39m
+
+[33mWarnings:
+[39m  1  [37mundefined[39m
