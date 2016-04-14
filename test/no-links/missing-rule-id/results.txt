@@ -19,8 +19,8 @@
 [22m[39m
 
 [31mErrors:
-[39m  1  [37mundefined[39m
-  1  [37mno-process-exit[39m
+[39m  1  [37mno-process-exit[39m
+  1  [37mundefined[39m
 
 [33mWarnings:
 [39m  1  [37mundefined[39m

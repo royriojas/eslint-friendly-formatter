@@ -19,8 +19,8 @@
 [22m[39m
 
 [31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m
-  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+  1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m
 
 [33mWarnings:
 [39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m

@@ -54,7 +54,9 @@ var getKeyLink = function ( key ) {
 var printSummary = function ( hash, title, method ) {
   var res = '\n\n' + chalk[ method ]( title + ':\n' );
   res += table(
-    Object.keys( hash ).map( function ( key ) {
+    Object.keys( hash ).sort( function ( a, b ) {
+      return hash[ a ] > hash[ b ] ? -1 : 1;
+    } ).map( function ( key ) {
       return [
         '',
         hash[ key ],
