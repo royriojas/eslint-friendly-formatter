@@ -1,5 +1,18 @@
 
 # eslint-friendly-formatter - Changelog
+## v2.0.2
+- **Build Scripts Changes**
+  - Release v2.0.2 - [f8af585]( https://github.com/royriojas/eslint-friendly-formatter/commit/f8af585 ), [Roy Riojas](https://github.com/Roy Riojas), 14/04/2016 00:19:03
+
+    
+- **Bug Fixes**
+  - sort results by number of ocurrences - [099515f]( https://github.com/royriojas/eslint-friendly-formatter/commit/099515f ), [Roy Riojas](https://github.com/Roy Riojas), 14/04/2016 00:18:50
+
+    
+- **Documentation**
+  - Generate changelog - [0c89457]( https://github.com/royriojas/eslint-friendly-formatter/commit/0c89457 ), [Roy Riojas](https://github.com/Roy Riojas), 10/04/2016 02:47:25
+
+    
 ## v2.0.1
 - **Build Scripts Changes**
   - Release v2.0.1 - [69f49ac]( https://github.com/royriojas/eslint-friendly-formatter/commit/69f49ac ), [Roy Riojas](https://github.com/Roy Riojas), 10/04/2016 02:47:24
