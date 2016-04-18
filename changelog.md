@@ -1,5 +1,28 @@
 
 # eslint-friendly-formatter - Changelog
+## v2.0.3
+- **Build Scripts Changes**
+  - Release v2.0.3 - [a238eab]( https://github.com/royriojas/eslint-friendly-formatter/commit/a238eab ), [Roy Riojas](https://github.com/Roy Riojas), 18/04/2016 14:07:23
+
+    
+- **Features**
+  - Add an option to group by issue - [39ef078]( https://github.com/royriojas/eslint-friendly-formatter/commit/39ef078 ), [Roy Riojas](https://github.com/Roy Riojas), 18/04/2016 14:07:15
+
+    Eslint does not support passing arguments, but we can pass any
+    parameters using `-- --param-here`. So now inside the reporter we can get
+    the value like `process.argv['--param-here']`. This can be used
+    to pass flags to the reporter so now we can do the following
+    
+    `--eff-by-issue` will group the report by issue type
+    
+    ```bash
+    eslint -f 'node_modules/eslint-friendly-formatter' -- --eff-by-issue
+    ```
+    
+- **Documentation**
+  - Generate changelog - [d12a6d1]( https://github.com/royriojas/eslint-friendly-formatter/commit/d12a6d1 ), [Roy Riojas](https://github.com/Roy Riojas), 14/04/2016 00:19:05
+
+    
 ## v2.0.2
 - **Build Scripts Changes**
   - Release v2.0.2 - [f8af585]( https://github.com/royriojas/eslint-friendly-formatter/commit/f8af585 ), [Roy Riojas](https://github.com/Roy Riojas), 14/04/2016 00:19:03
