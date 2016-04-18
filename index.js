@@ -92,6 +92,7 @@ module.exports = function ( results ) {
   var entries = [];
   var path = require( 'path' );
   var absolutePathsToFile = parseBoolEnvVar( 'EFF_ABSOLUTE_PATHS' );
+  var groupByIssue = process.argv.indexOf( '--eff-by-issue' ) > -1;
 
   var errorsHash = { };
   var warningsHash = { };
@@ -106,7 +107,23 @@ module.exports = function ( results ) {
   } );
 
   entries.sort( function ( a, b ) {
-    return a.severity > b.severity ? 1 : -1;
+    if ( a.severity > b.severity ) {
+      return 1;
+    }
+    if ( a.severity < b.severity ) {
+      return -1;
+    }
+
+    if ( groupByIssue ) {
+      if ( a.ruleId > b.ruleId ) {
+        return 1;
+      }
+      if ( a.ruleId < b.ruleId ) {
+        return -1;
+      }
+    }
+
+    return 0;
   } );
 
   output += table(
