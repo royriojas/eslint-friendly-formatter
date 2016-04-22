@@ -27,7 +27,7 @@ This module is based on the original `stylish` formatter that is now part of ESL
 
 ## Example of the output
 
-![screenshot](clickable-rules.png)
+![screenshot](clickable-rules2.png)
 
 ## install
 
@@ -51,6 +51,18 @@ npm i --save-dev eslint-friendly-formatter
      }
    }
    ```
+
+   **Note**: In windows you might not need the quotes around the path to the module.
+
+   ```javascript
+   {
+     "scripts": {
+       "eslint": "eslint --format node_modules/eslint-friendly-formatter file1 file2 dir1/ dir2/",
+     }
+   }
+   ```
+
+   see [issue #17](https://github.com/royriojas/eslint-friendly-formatter/issues/17)
 
 1. Create a external tool to run eslint using this module as your formatter like this
    - program: `npm`
@@ -133,10 +145,28 @@ grunt.initConfig({
 ```
 ## Formatter parameters
 
-Eslint does [not support passing parameters to formatters from the cli](https://github.com/eslint/eslint/issues/2989) yet. So in order
-to pass parameters to the formatter we will have to rely on **environment variables**
+**UPDATE:**
 
-### EFF_NO_GRAY
+We can pass variables to the formatter using a double dash at the end of the eslint command `-- --eff-by-issue`. So a new flag can be used to group eslint issues by `ruleId` instead as by file. This is useful if you want to fix at once all the errors/warnigs of the same kind.
+
+~~Eslint [does not support passing parameters to formatters from the cli](https://github.com/eslint/eslint/issues/2989) yet.So in order
+to pass parameters to the formatter we will have to rely on **environment variables**~~
+
+### Command line options
+
+#### --eff-by-issue
+
+Normally the reporter will group issues by file, which is handy for normal development. But there are some cases where you might want to fix all the errors of a same kind all at once. For those cases this flag can be used to make the reporter group the issues by ruleId.
+
+```bash
+eslint -f node_modules/eslint-friendly-formatter client/**/*.js server/**/*.js -- --eff-by-issue # notice the --
+```
+
+**Important**: don't forget to add the flag at the end and after `-- ` otherwise it will be interpreted as a eslint parameter and will fail as that parameter is not known to eslint.
+
+### ENV Variables
+
+#### EFF_NO_GRAY
 
 Disable the gray color output
 
@@ -148,7 +178,7 @@ export EFF_NO_GRAY=true
 
 And the gray color won't be used.
 
-### EFF_ABSOLUTE_PATHS
+#### EFF_ABSOLUTE_PATHS
 
 Make the paths of the files in the reporter be absolute instead of relative as it is by default in the received results.
 
@@ -158,7 +188,7 @@ Some terminals work better with relative paths (like `iTerm2` with `fish`) and o
 export EFF_ABSOLUTE_PATHS=true
 ```
 
-### EFF_EDITOR_SCHEME
+#### EFF_EDITOR_SCHEME
 
 If this parameter is set, a url will be output below the filename.
 
