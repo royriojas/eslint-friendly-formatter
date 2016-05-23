@@ -1,5 +1,28 @@
 
 # eslint-friendly-formatter - Changelog
+## v2.0.5
+- **Build Scripts Changes**
+  - Release v2.0.5 - [bb11799]( https://github.com/royriojas/eslint-friendly-formatter/commit/bb11799 ), [Roy Riojas](https://github.com/Roy Riojas), 23/05/2016 01:32:28
+
+    
+- **Features**
+  - add `--eff-filter` option - [cac606d]( https://github.com/royriojas/eslint-friendly-formatter/commit/cac606d ), [Roy Riojas](https://github.com/Roy Riojas), 23/05/2016 01:30:10
+
+    The `--eff-filter` filters the rules shown in the report. Usefule to
+    filter only a given type of rule.
+    
+    **Example**
+    
+    The following will only show the warning for `global-require` ruleId
+    
+    ```bash
+    eslint -f node_modules/eslint-friendly-formatter client/**/*.js server/**/*.js -- --eff-by-issue --eff-filter 'global-require' # notice the --
+    ```
+    
+- **Documentation**
+  - Generate changelog - [928e6db]( https://github.com/royriojas/eslint-friendly-formatter/commit/928e6db ), [Roy Riojas](https://github.com/Roy Riojas), 22/04/2016 14:27:13
+
+    
 ## v2.0.4
 - **Build Scripts Changes**
   - Release v2.0.4 - [211ead4]( https://github.com/royriojas/eslint-friendly-formatter/commit/211ead4 ), [Roy Riojas](https://github.com/Roy Riojas), 22/04/2016 14:27:12
