@@ -1,24 +1,24 @@
-describe( 'eslint-friendly-formatter', function () {
+describe('eslint-friendly-formatter', function() {
   'use strict';
 
-  var expand = require( 'glob-expand' );
-  var readJSON = require( 'read-json-sync' );
-  var read = require( 'read-file' ).readFileSync;
+  var expand = require('glob-expand');
+  var readJSON = require('read-json-sync');
+  var read = require('read-file').readFileSync;
 
   // var write = require( 'write' ).sync;
-  var path = require( 'path' );
-  var proxyquire = require( 'proxyquire' );
+  var path = require('path');
+  var proxyquire = require('proxyquire');
 
-  var readJsonFile = function ( file ) {
+  var readJsonFile = function(file) {
     try {
-      return readJSON( file );
+      return readJSON(file);
     } catch (ex) {
       return null;
     }
   };
 
-  describe( 'formatter', function () {
-    var formatter = proxyquire( '../..', {
+  describe('formatter', function() {
+    var formatter = proxyquire('../..', {
       path: {
       },
       './process': {
@@ -26,49 +26,49 @@ describe( 'eslint-friendly-formatter', function () {
           EFF_NO_GRAY: 'false'
         }
       }
-    } );
-    var files = expand( path.resolve( __dirname, '../fixtures/**/*.json' ) );
+    });
+    var files = expand(path.resolve(__dirname, '../fixtures/**/*.json'));
 
-    files.forEach( function ( file ) {
-      it( 'should produce the expected output for the given input: ' + path.basename( path.dirname( file ) ), function () {
+    files.forEach(function(file) {
+      it('should produce the expected output for the given input: ' + path.basename(path.dirname(file)), function() {
 
-        var results = readJsonFile( file );
-        var output = formatter( results );
+        var results = readJsonFile(file);
+        var output = formatter(results);
         // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
-        expect( output ).to.equal( resultText );
+        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+        expect(output).to.equal(resultText);
 
-      } );
-    } );
-  } );
+      });
+    });
+  });
 
-  describe( 'no gray', function () {
-    var formatter = proxyquire( '../..', {
+  describe('no gray', function() {
+    var formatter = proxyquire('../..', {
       path: {},
       './process': {
         env: {
           EFF_NO_GRAY: 'true'
         }
       }
-    } );
-    var files = expand( path.resolve( __dirname, '../no-gray-fixtures/**/*.json' ) );
+    });
+    var files = expand(path.resolve(__dirname, '../no-gray-fixtures/**/*.json'));
 
-    files.forEach( function ( file ) {
-      it( 'should produce the expected output for the given input: ' + path.basename( path.dirname( file ) ), function () {
+    files.forEach(function(file) {
+      it('should produce the expected output for the given input: ' + path.basename(path.dirname(file)), function() {
 
-        var results = readJsonFile( file );
-        var output = formatter( results );
+        var results = readJsonFile(file);
+        var output = formatter(results);
         // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
-        expect( output ).to.equal( resultText );
-      } );
-    } );
-  } );
+        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+        expect(output).to.equal(resultText);
+      });
+    });
+  });
 
-  describe( 'absolute paths to file', function () {
-    var formatter = proxyquire( '../..', {
+  describe('absolute paths to file', function() {
+    var formatter = proxyquire('../..', {
       path: {
-        resolve: function ( args ) {
+        resolve: function(args) {
           return '/home/usr/roy/' + args;
         }
       },
@@ -77,25 +77,25 @@ describe( 'eslint-friendly-formatter', function () {
           EFF_ABSOLUTE_PATHS: 'true'
         }
       }
-    } );
-    var files = expand( path.resolve( __dirname, '../absolute-paths/**/*.json' ) );
+    });
+    var files = expand(path.resolve(__dirname, '../absolute-paths/**/*.json'));
 
-    files.forEach( function ( file ) {
-      it( 'should produce the expected output for the given input: ' + path.basename( path.dirname( file ) ), function () {
+    files.forEach(function(file) {
+      it('should produce the expected output for the given input: ' + path.basename(path.dirname(file)), function() {
 
-        var results = readJsonFile( file );
-        var output = formatter( results );
+        var results = readJsonFile(file);
+        var output = formatter(results);
         // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
-        expect( output ).to.equal( resultText );
-      } );
-    } );
-  } );
+        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+        expect(output).to.equal(resultText);
+      });
+    });
+  });
 
-  describe( 'scheme', function () {
-    var formatter = proxyquire( '../..', {
+  describe('scheme', function() {
+    var formatter = proxyquire('../..', {
       path: {
-        resolve: function ( args ) {
+        resolve: function(args) {
           return '/home/usr/roy/' + args;
         }
       },
@@ -105,25 +105,25 @@ describe( 'eslint-friendly-formatter', function () {
           EFF_EDITOR_SCHEME: 'editor://open?file={file}&line={line}&column={column}'
         }
       }
-    } );
-    var files = expand( path.resolve( __dirname, '../scheme/**/*.json' ) );
+    });
+    var files = expand(path.resolve(__dirname, '../scheme/**/*.json'));
 
-    files.forEach( function ( file ) {
-      it( 'should produce the expected output for the given input: ' + path.basename( path.dirname( file ) ), function () {
+    files.forEach(function(file) {
+      it('should produce the expected output for the given input: ' + path.basename(path.dirname(file)), function() {
 
-        var results = readJsonFile( file );
-        var output = formatter( results );
+        var results = readJsonFile(file);
+        var output = formatter(results);
         // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
-        expect( output ).to.equal( resultText );
-      } );
-    } );
-  } );
+        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+        expect(output).to.equal(resultText);
+      });
+    });
+  });
 
-  describe( 'absolute paths to file, no gray', function () {
-    var formatter = proxyquire( '../..', {
+  describe('absolute paths to file, no gray', function() {
+    var formatter = proxyquire('../..', {
       path: {
-        resolve: function ( args ) {
+        resolve: function(args) {
           return '/home/usr/roy/' + args;
         }
       },
@@ -133,25 +133,25 @@ describe( 'eslint-friendly-formatter', function () {
           EFF_NO_GRAY: 'true'
         }
       }
-    } );
-    var files = expand( path.resolve( __dirname, '../absolute-paths-no-gray/**/*.json' ) );
+    });
+    var files = expand(path.resolve(__dirname, '../absolute-paths-no-gray/**/*.json'));
 
-    files.forEach( function ( file ) {
-      it( 'should produce the expected output for the given input: ' + path.basename( path.dirname( file ) ), function () {
+    files.forEach(function(file) {
+      it('should produce the expected output for the given input: ' + path.basename(path.dirname(file)), function() {
 
-        var results = readJsonFile( file );
-        var output = formatter( results );
+        var results = readJsonFile(file);
+        var output = formatter(results);
         // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
-        expect( output ).to.equal( resultText );
-      } );
-    } );
-  } );
+        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+        expect(output).to.equal(resultText);
+      });
+    });
+  });
 
-  describe( 'no links to rules', function () {
-    var formatter = proxyquire( '../..', {
+  describe('no links to rules', function() {
+    var formatter = proxyquire('../..', {
       path: {
-        resolve: function ( args ) {
+        resolve: function(args) {
           return '/home/usr/roy/' + args;
         }
       },
@@ -160,25 +160,25 @@ describe( 'eslint-friendly-formatter', function () {
           EFF_NO_LINK_RULES: 'true'
         }
       }
-    } );
-    var files = expand( path.resolve( __dirname, '../no-links/**/*.json' ) );
+    });
+    var files = expand(path.resolve(__dirname, '../no-links/**/*.json'));
 
-    files.forEach( function ( file ) {
-      it( 'should produce the expected output for the given input: ' + path.basename( path.dirname( file ) ), function () {
+    files.forEach(function(file) {
+      it('should produce the expected output for the given input: ' + path.basename(path.dirname(file)), function() {
 
-        var results = readJsonFile( file );
-        var output = formatter( results );
+        var results = readJsonFile(file);
+        var output = formatter(results);
         // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
-        expect( output ).to.equal( resultText );
-      } );
-    } );
-  } );
+        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+        expect(output).to.equal(resultText);
+      });
+    });
+  });
 
-  describe( 'custom rules links open google search', function () {
-    var formatter = proxyquire( '../..', {
+  describe('custom rules links open google search', function() {
+    var formatter = proxyquire('../..', {
       path: {
-        resolve: function ( args ) {
+        resolve: function(args) {
           return '/home/usr/roy/' + args;
         }
       },
@@ -187,20 +187,46 @@ describe( 'eslint-friendly-formatter', function () {
           EFF_NO_LINK_RULES: 'false'
         }
       }
-    } );
-    var files = expand( path.resolve( __dirname, '../plugin-rules/**/*.json' ) );
+    });
+    var files = expand(path.resolve(__dirname, '../plugin-rules/**/*.json'));
 
-    files.forEach( function ( file ) {
-      it( 'should produce the expected output for the given input: ' + path.basename( path.dirname( file ) ), function () {
+    files.forEach(function(file) {
+      it('should produce the expected output for the given input: ' + path.basename(path.dirname(file)), function() {
 
-        var results = readJsonFile( file );
-        var output = formatter( results );
+        var results = readJsonFile(file);
+        var output = formatter(results);
         // var write = require( 'write' ).sync;
         // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        var resultText = read( path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ) );
-        expect( output ).to.equal( resultText );
-      } );
-    } );
-  } );
+        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+        expect(output).to.equal(resultText);
+      });
+    });
+  });
 
-} );
+  describe('--eff-filter option', function() {
+    var formatter = proxyquire('../..', {
+      path: {
+        resolve: function(args) {
+          return '/home/usr/roy/' + args;
+        }
+      },
+      './process': {
+        argv: ['--', '--eff-filter', 'no-unused-vars']
+      }
+    });
+    var files = expand(path.resolve(__dirname, '../filter/**/*.json'));
+
+    files.forEach(function(file) {
+      it('should produce the expected output for the given input: ' + path.basename(path.dirname(file)), function() {
+
+        var results = readJsonFile(file);
+        var output = formatter(results);
+        // var write = require('write').sync;
+        // write(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'), output);
+        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+        expect(output).to.equal(resultText);
+      });
+    });
+  });
+
+});

@@ -20,8 +20,9 @@
     "beautify": "esbeautifier './index.js' 'test/specs/**/*.js'",
     "beautify-check": "esbeautifier -k './index.js' 'test/specs/**/*.js'",
     "eslint": "eslint --format './index.js' index.js test/specs/ -c './configs/eslint.json'",
-    "lint": "npm run beautify && npm run eslint",
-    "test": "mocha-runner 'test/specs/**/*.js'",
+    "lint-fix": "npm run beautify && npm run eslint -- --fix",
+    "lint": "npm run beautify-check && npm run eslint",
+    "test": "npm run lint && mocha-runner 'test/specs/**/*.js'",
     "cover": "istanbul cover -x 'test/specs/**/*.js' mocha-runner 'test/specs/**/*.js' html text-summary",
     "watch": "npm run cover && watch-spawn -i -p 'test/specs/**/*.js' istanbul cover test/runner.js html text-summary",
     "check": "npm run beautify-check && npm run eslint",
@@ -51,7 +52,7 @@
   "devDependencies": {
     "changelogx": "^1.0.18",
     "esbeautifier": "^9.0.0",
-    "eslint": "^0.24.1",
+    "eslint": "^2.10.2",
     "glob-expand": "^0.1.0",
     "istanbul": "^0.3.17",
     "mocha-runner": "^1.0.8",
@@ -66,6 +67,7 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "extend": "^3.0.0",
+    "minimist": "^1.2.0",
     "text-table": "^0.2.0"
   },
   "changelogx": {

@@ -154,6 +154,14 @@ to pass parameters to the formatter we will have to rely on **environment variab
 
 ### Command line options
 
+#### --eff-filter
+
+Only shows the `errors`/`warnigs` that match the given `ruleId` filter. This option will only filter the reported rules the error and warning counts will be the same as when all rules are reported same as the exit code.
+
+```bash
+eslint -f node_modules/eslint-friendly-formatter client/**/*.js server/**/*.js -- --eff-by-issue --eff-filter 'global-require' # notice the --
+```
+
 #### --eff-by-issue
 
 Normally the reporter will group issues by file, which is handy for normal development. But there are some cases where you might want to fix all the errors of a same kind all at once. For those cases this flag can be used to make the reporter group the issues by ruleId.

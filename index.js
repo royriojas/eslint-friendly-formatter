@@ -3,11 +3,14 @@
  */
 'use strict';
 
-var chalk = require( 'chalk' ),
-  table = require( 'text-table' ),
-  extend = require( 'extend' );
+var chalk = require('chalk'),
+  table = require('text-table'),
+  extend = require('extend');
 
-var process = require( './process' );
+var path = require('path');
+
+var process = require('./process');
+var minimist = require('minimist');
 
 //------------------------------------------------------------------------------
 // Helpers
@@ -19,59 +22,59 @@ var process = require( './process' );
  * @param {int} count A number controlling whether word should be pluralized.
  * @returns {string} The original word with an s on the end if count is not one.
  */
-function pluralize( word, count ) {
+function pluralize(word, count) {
   return (count === 1 ? word : word + 's');
 }
 
-var parseBoolEnvVar = function ( varName ) {
+var parseBoolEnvVar = function(varName) {
   var env = process.env || { };
-  return env[ varName ] === 'true';
+  return env[varName] === 'true';
 };
 
-var subtleLog = function ( args ) {
-  return parseBoolEnvVar( 'EFF_NO_GRAY' ) ? args : chalk.gray( args );
+var subtleLog = function(args) {
+  return parseBoolEnvVar('EFF_NO_GRAY') ? args : chalk.gray(args);
 };
 
-var getEnvVar = function ( varName ) {
+var getEnvVar = function(varName) {
   var env = process.env || { };
-  return env[ varName ] || false;
+  return env[varName] || false;
 };
 
-var getFileLink = function ( path, line, column ) {
-  var scheme = getEnvVar( 'EFF_EDITOR_SCHEME' );
-  if ( scheme === false ) {
+var getFileLink = function(_path, line, column) {
+  var scheme = getEnvVar('EFF_EDITOR_SCHEME');
+  if (scheme === false) {
     return false;
   }
-  return scheme.replace( '{file}', encodeURIComponent( path ) ).replace( '{line}', line ).replace( '{column}', column );
+  return scheme.replace('{file}', encodeURIComponent(_path)).replace('{line}', line).replace('{column}', column);
 };
 
-var getKeyLink = function ( key ) {
-  var noLinkRules = parseBoolEnvVar( 'EFF_NO_LINK_RULES' );
-  var url = key.indexOf( '/' ) > -1 ? 'https://google.com/#q=' : 'http://eslint.org/docs/rules/';
-  return (!noLinkRules) ? chalk.underline( subtleLog( url + chalk.white( encodeURIComponent( key ) ) ) ) : chalk.white( key );
+var getKeyLink = function(key) {
+  var noLinkRules = parseBoolEnvVar('EFF_NO_LINK_RULES');
+  var url = key.indexOf('/') > -1 ? 'https://google.com/#q=' : 'http://eslint.org/docs/rules/';
+  return (!noLinkRules) ? chalk.underline(subtleLog(url + chalk.white(encodeURIComponent(key)))) : chalk.white(key);
 };
 
-var printSummary = function ( hash, title, method ) {
-  var res = '\n\n' + chalk[ method ]( title + ':\n' );
+var printSummary = function(hash, title, method) {
+  var res = '\n\n' + chalk[method](title + ':\n');
   res += table(
-    Object.keys( hash ).sort( function ( a, b ) {
-      return hash[ a ] > hash[ b ] ? -1 : 1;
-    } ).map( function ( key ) {
+    Object.keys(hash).sort(function(a, b) {
+      return hash[a] > hash[b] ? -1 : 1;
+    }).map(function(key) {
       return [
         '',
-        hash[ key ],
-        getKeyLink( key )
+        hash[key],
+        getKeyLink(key)
       ];
-    } ), {
+    }), {
       align: [
         '',
         'r',
         'l'
       ],
-      stringLength: function ( str ) {
-        return chalk.stripColor( str ).length;
+      stringLength: function(str) {
+        return chalk.stripColor(str).length;
       }
-    } );
+    });
   return res;
 };
 
@@ -79,7 +82,7 @@ var printSummary = function ( hash, title, method ) {
 // Public Interface
 //------------------------------------------------------------------------------
 
-module.exports = function ( results ) {
+module.exports = function(results) {
 
   var output = '\n',
     total = 0,
@@ -90,54 +93,65 @@ module.exports = function ( results ) {
   results = results || [];
 
   var entries = [];
-  var path = require( 'path' );
-  var absolutePathsToFile = parseBoolEnvVar( 'EFF_ABSOLUTE_PATHS' );
-  var groupByIssue = process.argv.indexOf( '--eff-by-issue' ) > -1;
+
+  var absolutePathsToFile = parseBoolEnvVar('EFF_ABSOLUTE_PATHS');
+
+  var restArgs = process.argv.slice(process.argv.indexOf('--') + 1);
+  var parsedArgs = minimist(restArgs);
+
+  var groupByIssue = parsedArgs['eff-by-issue'];
+  var filterRule = parsedArgs['eff-filter'];
 
   var errorsHash = { };
   var warningsHash = { };
 
-  results.forEach( function ( result ) {
+  results.forEach(function(result) {
     var messages = result.messages || [];
-    entries = entries.concat( messages.map( function ( message ) {
-      return extend( {
-        filePath: absolutePathsToFile ? path.resolve( result.filePath ) : result.filePath
-      }, message );
-    } ) );
-  } );
+    entries = entries.concat(messages.map(function(message) {
+      return extend({
+        filePath: absolutePathsToFile ? path.resolve(result.filePath) : result.filePath
+      }, message);
+    }));
+  });
 
-  entries.sort( function ( a, b ) {
-    if ( a.severity > b.severity ) {
+  entries.sort(function(a, b) {
+    if (a.severity > b.severity) {
       return 1;
     }
-    if ( a.severity < b.severity ) {
+    if (a.severity < b.severity) {
       return -1;
     }
 
-    if ( groupByIssue ) {
-      if ( a.ruleId > b.ruleId ) {
+    if (groupByIssue) {
+      if (a.ruleId > b.ruleId) {
         return 1;
       }
-      if ( a.ruleId < b.ruleId ) {
+      if (a.ruleId < b.ruleId) {
         return -1;
       }
     }
 
     return 0;
-  } );
+  });
 
   output += table(
-        entries.map( function ( message ) {
+        entries.reduce(function(seq, message) {
           var messageType;
 
-          if ( message.fatal || message.severity === 2 ) {
-            messageType = chalk.red( '✘' );
+          if (filterRule) {
+            if (message.ruleId !== filterRule) {
+              return seq;
+            }
+          }
+
+          if (message.fatal || message.severity === 2) {
+            messageType = chalk.red('✘');
             summaryColor = 'red';
-            errorsHash[ message.ruleId ] = (errorsHash[ message.ruleId ] || 0) + 1;
+            errorsHash[message.ruleId] = (errorsHash[message.ruleId] || 0) + 1;
             errors++;
           } else {
-            messageType = chalk.yellow( '⚠' );
-            warningsHash[ message.ruleId ] = (warningsHash[ message.ruleId ] || 0) + 1;
+            messageType = chalk.yellow('⚠');
+            warningsHash[message.ruleId] = (warningsHash[message.ruleId] || 0) + 1;
             warnings++;
           }
 
@@ -146,9 +160,9 @@ module.exports = function ( results ) {
 
           var arrow = '';
           var hasSource = message.source !== undefined && message.source.length < 1000;
-          if ( hasSource ) {
+          if (hasSource) {
             for (var i = 0; i < message.column; i++) {
-              if ( message.source.charAt( i ) === '\t' ) {
+              if (message.source.charAt(i) === '\t') {
                 arrow += '\t';
               } else {
                 arrow += ' ';
@@ -158,51 +172,52 @@ module.exports = function ( results ) {
           }
 
           var filePath = message.filePath;
-          var link = getFileLink( filePath, line, column );
-          var filename = subtleLog( filePath + ':' + line + ':' + column );
+          var link = getFileLink(filePath, line, column);
+          var filename = subtleLog(filePath + ':' + line + ':' + column);
 
-          return [
+          seq.push([
             '',
-            messageType + '  ' + getKeyLink( message.ruleId || '' ),
-            message.message.replace( /\.$/, '' ),
-            '$MARKER$  ' + (link === false ? chalk.underline( filename ) : filename) +
-              (link === false ? '' : '$MARKER$  ' + chalk.underline( subtleLog( link ) )) + '$MARKER$  ' +
-              (hasSource ? subtleLog( message.source ) + '$MARKER$  ' + subtleLog( arrow ) : '') + '$MARKER$'
-          ];
-        } ), {
+            messageType + '  ' + getKeyLink(message.ruleId || ''),
+            message.message.replace(/\.$/, ''),
+            '$MARKER$  ' + (link === false ? chalk.underline(filename) : filename) +
+              (link === false ? '' : '$MARKER$  ' + chalk.underline(subtleLog(link))) + '$MARKER$  ' +
+              (hasSource ? subtleLog(message.source) + '$MARKER$  ' + subtleLog(arrow) : '') + '$MARKER$'
+          ]);
+          return seq;
+        }, []), {
           align: [
             '',
             'l',
             'l',
             'l'
           ],
-          stringLength: function ( str ) {
-            return chalk.stripColor( str ).length;
+          stringLength: function(str) {
+            return chalk.stripColor(str).length;
           }
-        } ).replace( /\$MARKER\$/g, '\n' ) + '\n\n';
+        }).replace(/\$MARKER\$/g, '\n') + '\n\n';
 
   total = entries.length;
 
-  if ( total > 0 ) {
-    output += chalk[ summaryColor ].bold( [
+  if (total > 0) {
+    output += chalk[summaryColor].bold([
       '✘ ',
       total,
-      pluralize( ' problem', total ),
+      pluralize(' problem', total),
       ' (',
       errors,
-      pluralize( ' error', errors ),
+      pluralize(' error', errors),
       ', ',
       warnings,
-      pluralize( ' warning', warnings ),
+      pluralize(' warning', warnings),
       ')\n'
-    ].join( '' ) );
+    ].join(''));
 
-    if ( errors > 0 ) {
-      output += printSummary( errorsHash, 'Errors', 'red' );
+    if (errors > 0) {
+      output += printSummary(errorsHash, 'Errors', 'red');
     }
 
-    if ( warnings > 0 ) {
-      output += printSummary( warningsHash, 'Warnings', 'yellow' );
+    if (warnings > 0) {
+      output += printSummary(warningsHash, 'Warnings', 'yellow');
     }
   }
 
