@@ -131,6 +131,25 @@ module.exports = function(results) {
       }
     }
 
+    var pathSort = a.filePath.localeCompare(b.filePath);
+    if (pathSort) {
+      return pathSort;
+    }
+
+    if (a.line > b.line) {
+      return 1;
+    }
+    if (a.line < b.line) {
+      return -1;
+    }
+
+    if (a.column > b.column) {
+      return 1;
+    }
+    if (a.column < b.column) {
+      return -1;
+    }
+
     return 0;
   });
 
