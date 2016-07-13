@@ -1,5 +1,19 @@
 
 # eslint-friendly-formatter - Changelog
+## v2.0.6
+- **Build Scripts Changes**
+  - Release v2.0.6 - [cdeb9b2]( https://github.com/royriojas/eslint-friendly-formatter/commit/cdeb9b2 ), [Roy Riojas](https://github.com/Roy Riojas), 13/07/2016 00:11:04
+
+    
+- **Bug Fixes**
+  - Sort results alphabetically, by line and by column - [ee2c8f2]( https://github.com/royriojas/eslint-friendly-formatter/commit/ee2c8f2 ), [Cédric Malard](https://github.com/Cédric Malard), 12/07/2016 11:59:04
+
+    Fix https://github.com/royriojas/eslint-friendly-formatter/issues/20
+    
+- **Documentation**
+  - Generate changelog - [3575350]( https://github.com/royriojas/eslint-friendly-formatter/commit/3575350 ), [Roy Riojas](https://github.com/Roy Riojas), 23/05/2016 01:32:30
+
+    
 ## v2.0.5
 - **Build Scripts Changes**
   - Release v2.0.5 - [bb11799]( https://github.com/royriojas/eslint-friendly-formatter/commit/bb11799 ), [Roy Riojas](https://github.com/Roy Riojas), 23/05/2016 01:32:28
