@@ -57,7 +57,7 @@ var getKeyLink = function(key) {
 };
 
 var printSummary = function(hash, title, method) {
-  var res = '\n\n' + chalk[method](title + ':\n');
+  var res = '\n\n' + chalk[method](title + ':') + chalk.white('\n');
   res += table(
     Object.keys(hash).sort(function(a, b) {
       return hash[a] > hash[b] ? -1 : 1;
@@ -232,8 +232,8 @@ module.exports = function(results) {
       ', ',
       warnings,
       pluralize(' warning', warnings),
-      ')\n'
-    ].join(''));
+      ')'
+    ].join('')) + chalk.white('\n');
 
     if (errors > 0) {
       output += printSummary(errorsHash, 'Errors', 'red');
