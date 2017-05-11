@@ -11,6 +11,7 @@ var path = require('path');
 
 var process = require('./process');
 var minimist = require('minimist');
+var clsc = require('coalescy');
 
 //------------------------------------------------------------------------------
 // Helpers
@@ -102,6 +103,8 @@ module.exports = function(results) {
   var groupByIssue = parsedArgs['eff-by-issue'];
   var filterRule = parsedArgs['eff-filter'];
 
+  absolutePathsToFile = clsc(parsedArgs['eff-absolute-paths'], absolutePathsToFile);
+
   var errorsHash = { };
   var warningsHash = { };
 
@@ -109,7 +112,7 @@ module.exports = function(results) {
     var messages = result.messages || [];
     entries = entries.concat(messages.map(function(message) {
       return extend({
-        filePath: absolutePathsToFile ? path.resolve(result.filePath) : result.filePath
+        filePath: absolutePathsToFile ? path.resolve(result.filePath) : path.relative('.', result.filePath)
       }, message);
     }));
   });
@@ -238,6 +241,10 @@ module.exports = function(results) {
     if (warnings > 0) {
       output += printSummary(warningsHash, 'Warnings', 'yellow');
     }
+  }
+
+  if (process.stdout.isTTY && !process.env.CI) {
+    output = '\u001B]50;CurrentDir=' + process.cwd() + '\u0007' + output;
   }
 
   return total > 0 ? output : '';

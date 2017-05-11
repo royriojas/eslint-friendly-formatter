@@ -1,4 +1,4 @@
-
+]50;CurrentDir=/Users/roy/royws/eslint-friendly-formatter
   [31m✘[39m  [37mcurly[39m            Expected { after 'if' condition                   
   [4m[90mtest/runner.js:41:2[39m[24m
   [90m  if ( err ) console.log( 'failed tests: ' + err );[39m

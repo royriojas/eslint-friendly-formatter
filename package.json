@@ -66,6 +66,7 @@
   },
   "dependencies": {
     "chalk": "^1.0.0",
+    "coalescy": "1.0.0",
     "extend": "^3.0.0",
     "minimist": "^1.2.0",
     "text-table": "^0.2.0"

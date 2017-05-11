@@ -1,4 +1,4 @@
-
+]50;CurrentDir=/Users/roy/royws/eslint-friendly-formatter
   [31m✘[39m  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m            Expected { after 'if' condition                   
   [4mtest/runner.js:41:2[24m
     if ( err ) console.log( 'failed tests: ' + err );

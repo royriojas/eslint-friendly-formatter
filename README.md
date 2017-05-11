@@ -172,9 +172,13 @@ eslint -f node_modules/eslint-friendly-formatter client/**/*.js server/**/*.js -
 
 **Important**: don't forget to add the flag at the end and after `-- ` otherwise it will be interpreted as a eslint parameter and will fail as that parameter is not known to eslint.
 
+#### --eff-absolute-paths
+
+Same as environment variable `EFF_ABSOLUTE_PATHS`. If set to true the paths will be absolute. Otherwise they will be relative to CWD.
+
 ### ENV Variables
 
-#### EFF_NO_GRAY
+#### `EFF_NO_GRAY`
 
 Disable the gray color output
 
@@ -186,7 +190,7 @@ export EFF_NO_GRAY=true
 
 And the gray color won't be used.
 
-#### EFF_ABSOLUTE_PATHS
+#### `EFF_ABSOLUTE_PATHS`
 
 Make the paths of the files in the reporter be absolute instead of relative as it is by default in the received results.
 
@@ -196,7 +200,7 @@ Some terminals work better with relative paths (like `iTerm2` with `fish`) and o
 export EFF_ABSOLUTE_PATHS=true
 ```
 
-#### EFF_EDITOR_SCHEME
+#### `EFF_EDITOR_SCHEME`
 
 If this parameter is set, a url will be output below the filename.
 
