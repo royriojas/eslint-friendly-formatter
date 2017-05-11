@@ -50,6 +50,7 @@
     "npm run verify"
   ],
   "devDependencies": {
+    "chai-jest-snapshot": "0.3.0",
     "changelogx": "^1.0.18",
     "esbeautifier": "10.1.1",
     "eslint": "^2.10.2",

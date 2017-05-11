@@ -1,12 +1,21 @@
+var chai = require('chai');
+var chaiJestSnapshot = require('chai-jest-snapshot');
+var expand = require('glob-expand');
+var readJSON = require('read-json-sync');
+
+var path = require('path');
+var proxyquire = require('proxyquire');
+
+
+chai.use(chaiJestSnapshot);
+
+beforeEach(function() {
+  chaiJestSnapshot.configureUsingMochaContext(this);
+});
+
+var expect = chai.expect;
+
 describe('eslint-friendly-formatter', function() {
-  'use strict';
-
-  var expand = require('glob-expand');
-  var readJSON = require('read-json-sync');
-
-  var snapshot = require('snap-shot');
-  var path = require('path');
-  var proxyquire = require('proxyquire');
 
   var readJsonFile = function(file) {
     try {
@@ -36,7 +45,7 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        snapshot(output);
+        expect(output).to.matchSnapshot();
         // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
         // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
         // expect(output).to.equal(resultText);
@@ -64,7 +73,7 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        snapshot(output);
+        expect(output).to.matchSnapshot();
       // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
       // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
       // expect(output).to.equal(resultText);
@@ -95,7 +104,7 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        snapshot(output);
+        expect(output).to.matchSnapshot();
       // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
       // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
       // expect(output).to.equal(resultText);
@@ -127,7 +136,7 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        snapshot(output);
+        expect(output).to.matchSnapshot();
       // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
       // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
       // expect(output).to.equal(resultText);
@@ -159,7 +168,7 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        snapshot(output);
+        expect(output).to.matchSnapshot();
       // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
       // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
       // expect(output).to.equal(resultText);
@@ -190,7 +199,7 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        snapshot(output);
+        expect(output).to.matchSnapshot();
       // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
       // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
       // expect(output).to.equal(resultText);
@@ -221,7 +230,7 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        snapshot(output);
+        expect(output).to.matchSnapshot();
       // var write = require( 'write' ).sync;
       // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
       // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
@@ -251,7 +260,7 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        snapshot(output);
+        expect(output).to.matchSnapshot();
       // var write = require('write').sync;
       // write(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'), output);
       // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
