@@ -3,9 +3,8 @@ describe('eslint-friendly-formatter', function() {
 
   var expand = require('glob-expand');
   var readJSON = require('read-json-sync');
-  var read = require('read-file').readFileSync;
 
-  // var write = require( 'write' ).sync;
+  var snapshot = require('snap-shot');
   var path = require('path');
   var proxyquire = require('proxyquire');
 
@@ -37,9 +36,10 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
+        snapshot(output);
         // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-        expect(output).to.equal(resultText);
+        // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+        // expect(output).to.equal(resultText);
 
       });
     });
@@ -51,6 +51,9 @@ describe('eslint-friendly-formatter', function() {
       './process': {
         env: {
           EFF_NO_GRAY: 'true'
+        },
+        cwd: function cwd() {
+          return '/path/to/working/directory';
         }
       }
     });
@@ -61,9 +64,10 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-        expect(output).to.equal(resultText);
+        snapshot(output);
+      // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
+      // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+      // expect(output).to.equal(resultText);
       });
     });
   });
@@ -78,6 +82,9 @@ describe('eslint-friendly-formatter', function() {
       './process': {
         env: {
           EFF_ABSOLUTE_PATHS: 'true'
+        },
+        cwd: function cwd() {
+          return '/path/to/working/directory';
         }
       }
     });
@@ -88,9 +95,10 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-        expect(output).to.equal(resultText);
+        snapshot(output);
+      // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
+      // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+      // expect(output).to.equal(resultText);
       });
     });
   });
@@ -106,6 +114,9 @@ describe('eslint-friendly-formatter', function() {
         env: {
           EFF_ABSOLUTE_PATHS: 'true',
           EFF_EDITOR_SCHEME: 'editor://open?file={file}&line={line}&column={column}'
+        },
+        cwd: function cwd() {
+          return '/path/to/working/directory';
         }
       }
     });
@@ -116,9 +127,10 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-        expect(output).to.equal(resultText);
+        snapshot(output);
+      // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
+      // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+      // expect(output).to.equal(resultText);
       });
     });
   });
@@ -134,6 +146,9 @@ describe('eslint-friendly-formatter', function() {
         env: {
           EFF_ABSOLUTE_PATHS: 'true',
           EFF_NO_GRAY: 'true'
+        },
+        cwd: function cwd() {
+          return '/path/to/working/directory';
         }
       }
     });
@@ -144,9 +159,10 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-        expect(output).to.equal(resultText);
+        snapshot(output);
+      // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
+      // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+      // expect(output).to.equal(resultText);
       });
     });
   });
@@ -161,6 +177,9 @@ describe('eslint-friendly-formatter', function() {
       './process': {
         env: {
           EFF_NO_LINK_RULES: 'true'
+        },
+        cwd: function cwd() {
+          return '/path/to/working/directory';
         }
       }
     });
@@ -171,9 +190,10 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-        expect(output).to.equal(resultText);
+        snapshot(output);
+      // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
+      // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+      // expect(output).to.equal(resultText);
       });
     });
   });
@@ -188,6 +208,9 @@ describe('eslint-friendly-formatter', function() {
       './process': {
         env: {
           EFF_NO_LINK_RULES: 'false'
+        },
+        cwd: function cwd() {
+          return '/path/to/working/directory';
         }
       }
     });
@@ -198,10 +221,11 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        // var write = require( 'write' ).sync;
-        // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-        expect(output).to.equal(resultText);
+        snapshot(output);
+      // var write = require( 'write' ).sync;
+      // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
+      // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+      // expect(output).to.equal(resultText);
       });
     });
   });
@@ -214,7 +238,10 @@ describe('eslint-friendly-formatter', function() {
         }
       },
       './process': {
-        argv: ['--', '--eff-filter', 'no-unused-vars']
+        argv: ['--', '--eff-filter', 'no-unused-vars'],
+        cwd: function cwd() {
+          return '/path/to/working/directory';
+        }
       }
     });
     var files = expand(path.resolve(__dirname, '../filter/**/*.json'));
@@ -224,10 +251,11 @@ describe('eslint-friendly-formatter', function() {
 
         var results = readJsonFile(file);
         var output = formatter(results);
-        // var write = require('write').sync;
-        // write(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'), output);
-        var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-        expect(output).to.equal(resultText);
+        snapshot(output);
+      // var write = require('write').sync;
+      // write(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'), output);
+      // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
+      // expect(output).to.equal(resultText);
       });
     });
   });
