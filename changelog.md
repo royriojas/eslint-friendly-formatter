@@ -1,5 +1,18 @@
 
 # eslint-friendly-formatter - Changelog
+## v3.0.0
+- **Build Scripts Changes**
+  - Release v3.0.0 - [6819e5e]( https://github.com/royriojas/eslint-friendly-formatter/commit/6819e5e ), [Roy Riojas](https://github.com/Roy Riojas), 11/05/2017 04:49:13
+
+    
+- **Bug Fixes**
+  - Make relative paths the default again - [c79ee4d]( https://github.com/royriojas/eslint-friendly-formatter/commit/c79ee4d ), [Roy Riojas](https://github.com/Roy Riojas), 11/05/2017 04:48:20
+
+    
+- **Documentation**
+  - Generate changelog - [9ac3e48]( https://github.com/royriojas/eslint-friendly-formatter/commit/9ac3e48 ), [Roy Riojas](https://github.com/Roy Riojas), 02/01/2017 06:13:49
+
+    
 ## v2.0.7
 - **Build Scripts Changes**
   - Release v2.0.7 - [637842a]( https://github.com/royriojas/eslint-friendly-formatter/commit/637842a ), [Roy Riojas](https://github.com/Roy Riojas), 02/01/2017 06:13:48
