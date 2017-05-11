@@ -24,6 +24,9 @@ describe('eslint-friendly-formatter', function() {
       './process': {
         env: {
           EFF_NO_GRAY: 'false'
+        },
+        cwd: function cwd() {
+          return '/path/to/working/directory';
         }
       }
     });
