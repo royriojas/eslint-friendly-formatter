@@ -4,6 +4,7 @@
 'use strict';
 
 var chalk = require('chalk'),
+  stripAnsi = require('strip-ansi'),
   table = require('text-table'),
   extend = require('extend');
 
@@ -73,7 +74,7 @@ var printSummary = function(hash, title, method) {
         'l'
       ],
       stringLength: function(str) {
-        return chalk.stripColor(str).length;
+        return stripAnsi(str).length;
       }
     });
   return res;
@@ -214,7 +215,7 @@ module.exports = function(results) {
             'l'
           ],
           stringLength: function(str) {
-            return chalk.stripColor(str).length;
+            return stripAnsi(str).length;
           }
         }).replace(/\$MARKER\$/g, '\n') + '\n\n';
 
