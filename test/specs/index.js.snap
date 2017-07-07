@@ -6,11 +6,11 @@ exports[`eslint-friendly-formatter --eff-filter option should produce the expect
   [90m  ^[39m
 
 
-[33m[1m✘ 3 problems (0 errors, 1 warning)
-[22m[39m
+[33m[1m✘ 3 problems (0 errors, 1 warning)[22m[39m
+[33m[1m[22m[39m
 
-[33mWarnings:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: basic 1`] = `
@@ -41,15 +41,15 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
   [90m  ^[39m
 
 
-[31m[1m✘ 5 problems (2 errors, 3 warnings)
-[22m[39m
+[31m[1m✘ 5 problems (2 errors, 3 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m
 
-[33mWarnings:
-[39m  3  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
+[33mWarnings:[39m
+[33m[39m  3  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: fatal 1`] = `
@@ -59,11 +59,11 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
   
 
 
-[31m[1m✘ 1 problem (1 error, 0 warnings)
-[22m[39m
+[31m[1m✘ 1 problem (1 error, 0 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: missing-line-column 1`] = `
@@ -84,15 +84,15 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
   [90m  ^[39m
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m
 
-[33mWarnings:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: missing-messages 1`] = `
@@ -108,11 +108,11 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
   [90m  ^[39m
 
 
-[31m[1m✘ 2 problems (2 errors, 0 warnings)
-[22m[39m
+[31m[1m✘ 2 problems (2 errors, 0 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m"
 `;
 
@@ -134,15 +134,15 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
   [90m  ^[39m
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m
 
-[33mWarnings:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: no-results-provided 1`] = `""`;
@@ -167,15 +167,15 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
   [90m  ^[39m
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m
 
-[33mWarnings:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: basic 1`] = `
@@ -206,15 +206,15 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
     ^
 
 
-[31m[1m✘ 5 problems (2 errors, 3 warnings)
-[22m[39m
+[31m[1m✘ 5 problems (2 errors, 3 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
   1  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m
 
-[33mWarnings:
-[39m  3  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m"
+[33mWarnings:[39m
+[33m[39m  3  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: fatal 1`] = `
@@ -224,11 +224,11 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
   
 
 
-[31m[1m✘ 1 problem (1 error, 0 warnings)
-[22m[39m
+[31m[1m✘ 1 problem (1 error, 0 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m"
+[31mErrors:[39m
+[31m[39m  1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: missing-line-column 1`] = `
@@ -249,15 +249,15 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
     ^
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
   1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m
 
-[33mWarnings:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: missing-messages 1`] = `
@@ -273,11 +273,11 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
     ^
 
 
-[31m[1m✘ 2 problems (2 errors, 0 warnings)
-[22m[39m
+[31m[1m✘ 2 problems (2 errors, 0 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
   1  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m"
 `;
 
@@ -299,15 +299,15 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
     ^
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
   1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m
 
-[33mWarnings:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: no-results-provided 1`] = `""`;
@@ -332,15 +332,15 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
     ^
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
   1  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m
 
-[33mWarnings:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter custom rules links open google search should produce the expected output for the given input: single-error 1`] = `
@@ -361,15 +361,15 @@ exports[`eslint-friendly-formatter custom rules links open google search should 
   [90m  ^[39m
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttps://google.com/#q=[37mreact%2Fno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttps://google.com/#q=[37mreact%2Fno-process-exit[90m[39m[24m
   1  [4m[90mhttps://google.com/#q=[37mplugin-rule%2Fcurly[90m[39m[24m
 
-[33mWarnings:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: basic 1`] = `
@@ -400,15 +400,15 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
   [90m  ^[39m
 
 
-[31m[1m✘ 5 problems (2 errors, 3 warnings)
-[22m[39m
+[31m[1m✘ 5 problems (2 errors, 3 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m
 
-[33mWarnings:
-[39m  3  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
+[33mWarnings:[39m
+[33m[39m  3  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: fatal 1`] = `
@@ -418,11 +418,11 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
   
 
 
-[31m[1m✘ 1 problem (1 error, 0 warnings)
-[22m[39m
+[31m[1m✘ 1 problem (1 error, 0 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: missing-line-column 1`] = `
@@ -443,15 +443,15 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
   [90m  ^[39m
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m
 
-[33mWarnings:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: missing-messages 1`] = `
@@ -467,11 +467,11 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
   [90m  ^[39m
 
 
-[31m[1m✘ 2 problems (2 errors, 0 warnings)
-[22m[39m
+[31m[1m✘ 2 problems (2 errors, 0 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m"
 `;
 
@@ -493,15 +493,15 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
   [90m  ^[39m
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m
 
-[33mWarnings:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: no-results-provided 1`] = `""`;
@@ -526,15 +526,15 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
   [90m  ^[39m
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m
 
-[33mWarnings:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: basic 1`] = `
@@ -565,15 +565,15 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
     ^
 
 
-[31m[1m✘ 5 problems (2 errors, 3 warnings)
-[22m[39m
+[31m[1m✘ 5 problems (2 errors, 3 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
   1  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m
 
-[33mWarnings:
-[39m  3  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m"
+[33mWarnings:[39m
+[33m[39m  3  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: fatal 1`] = `
@@ -583,11 +583,11 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
   
 
 
-[31m[1m✘ 1 problem (1 error, 0 warnings)
-[22m[39m
+[31m[1m✘ 1 problem (1 error, 0 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m"
+[31mErrors:[39m
+[31m[39m  1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: missing-line-column 1`] = `
@@ -608,15 +608,15 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
     ^
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
   1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m
 
-[33mWarnings:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: missing-messages 1`] = `
@@ -632,11 +632,11 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
     ^
 
 
-[31m[1m✘ 2 problems (2 errors, 0 warnings)
-[22m[39m
+[31m[1m✘ 2 problems (2 errors, 0 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
   1  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m"
 `;
 
@@ -658,15 +658,15 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
     ^
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
   1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m
 
-[33mWarnings:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4mhttp://eslint.org/docs/rules/[37mundefined[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: no-results-provided 1`] = `""`;
@@ -691,15 +691,15 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
     ^
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-process-exit[39m[24m
   1  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m
 
-[33mWarnings:
-[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: basic 1`] = `
@@ -730,15 +730,15 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
   [90m  ^[39m
 
 
-[31m[1m✘ 5 problems (2 errors, 3 warnings)
-[22m[39m
+[31m[1m✘ 5 problems (2 errors, 3 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [37mno-process-exit[39m
+[31mErrors:[39m
+[31m[39m  1  [37mno-process-exit[39m
   1  [37mcurly[39m
 
-[33mWarnings:
-[39m  3  [37mno-unused-vars[39m"
+[33mWarnings:[39m
+[33m[39m  3  [37mno-unused-vars[39m"
 `;
 
 exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: fatal 1`] = `
@@ -748,11 +748,11 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
   
 
 
-[31m[1m✘ 1 problem (1 error, 0 warnings)
-[22m[39m
+[31m[1m✘ 1 problem (1 error, 0 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [37mundefined[39m"
+[31mErrors:[39m
+[31m[39m  1  [37mundefined[39m"
 `;
 
 exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: missing-line-column 1`] = `
@@ -773,15 +773,15 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
   [90m  ^[39m
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [37mno-process-exit[39m
+[31mErrors:[39m
+[31m[39m  1  [37mno-process-exit[39m
   1  [37mundefined[39m
 
-[33mWarnings:
-[39m  1  [37mundefined[39m"
+[33mWarnings:[39m
+[33m[39m  1  [37mundefined[39m"
 `;
 
 exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: missing-messages 1`] = `
@@ -797,11 +797,11 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
   [90m  ^[39m
 
 
-[31m[1m✘ 2 problems (2 errors, 0 warnings)
-[22m[39m
+[31m[1m✘ 2 problems (2 errors, 0 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [37mno-process-exit[39m
+[31mErrors:[39m
+[31m[39m  1  [37mno-process-exit[39m
   1  [37mcurly[39m"
 `;
 
@@ -823,15 +823,15 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
   [90m  ^[39m
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [37mno-process-exit[39m
+[31mErrors:[39m
+[31m[39m  1  [37mno-process-exit[39m
   1  [37mundefined[39m
 
-[33mWarnings:
-[39m  1  [37mundefined[39m"
+[33mWarnings:[39m
+[33m[39m  1  [37mundefined[39m"
 `;
 
 exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: no-results-provided 1`] = `""`;
@@ -856,15 +856,15 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
   [90m  ^[39m
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [37mno-process-exit[39m
+[31mErrors:[39m
+[31m[39m  1  [37mno-process-exit[39m
   1  [37mcurly[39m
 
-[33mWarnings:
-[39m  1  [37mno-unused-vars[39m"
+[33mWarnings:[39m
+[33m[39m  1  [37mno-unused-vars[39m"
 `;
 
 exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: basic 1`] = `
@@ -900,15 +900,15 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
   [90m  ^[39m
 
 
-[31m[1m✘ 5 problems (2 errors, 3 warnings)
-[22m[39m
+[31m[1m✘ 5 problems (2 errors, 3 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m
 
-[33mWarnings:
-[39m  3  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
+[33mWarnings:[39m
+[33m[39m  3  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: fatal 1`] = `
@@ -919,11 +919,11 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
   
 
 
-[31m[1m✘ 1 problem (1 error, 0 warnings)
-[22m[39m
+[31m[1m✘ 1 problem (1 error, 0 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: missing-line-column 1`] = `
@@ -947,15 +947,15 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
   [90m  ^[39m
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m
 
-[33mWarnings:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: missing-messages 1`] = `
@@ -973,11 +973,11 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
   [90m  ^[39m
 
 
-[31m[1m✘ 2 problems (2 errors, 0 warnings)
-[22m[39m
+[31m[1m✘ 2 problems (2 errors, 0 warnings)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m"
 `;
 
@@ -1002,15 +1002,15 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
   [90m  ^[39m
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m
 
-[33mWarnings:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mundefined[90m[39m[24m"
 `;
 
 exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: no-results-provided 1`] = `""`;
@@ -1038,13 +1038,13 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
   [90m  ^[39m
 
 
-[31m[1m✘ 3 problems (2 errors, 1 warning)
-[22m[39m
+[31m[1m✘ 3 problems (2 errors, 1 warning)[22m[39m
+[31m[1m[22m[39m
 
-[31mErrors:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
+[31mErrors:[39m
+[31m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-process-exit[90m[39m[24m
   1  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m
 
-[33mWarnings:
-[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
+[33mWarnings:[39m
+[33m[39m  1  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m"
 `;
