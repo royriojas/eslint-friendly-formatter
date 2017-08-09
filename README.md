@@ -69,10 +69,10 @@ npm i --save-dev eslint-friendly-formatter
    - parameters: `run eslint`
    - working directory: `$ProjectFileDir$`
 
-2. Use an output filter like: (Please note the 2 spaces before `$FILE_PATH$`)
+2. Use an output filter like:
 
    ```bash
-     $FILE_PATH$.*:$LINE$.*:$COLUMN$
+   $FILE_PATH$.*:$LINE$.*:$COLUMN$
    ```
 3. When launching the tool now the files will be also clickable, see:
    ![screenshot](screenshot3.png)
