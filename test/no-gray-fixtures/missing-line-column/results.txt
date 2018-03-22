@@ -1,4 +1,4 @@
-]50;CurrentDir=/Users/roy/royws/eslint-friendly-formatter
+]1337;CurrentDir=/Users/roy/royws/eslint-friendly-formatter
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[24m                 path is defined but never used                    
   [4mindex.js:0:0[24m
     path = require( 'path' ),

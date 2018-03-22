@@ -1,5 +1,5 @@
 exports[`eslint-friendly-formatter --eff-filter option should produce the expected output for the given input: single-error 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m  path is defined but never used  
   [4m[90mindex.js:8:2[39m[24m
   [90m  path = require( \'path\' ),[39m
@@ -14,7 +14,7 @@ exports[`eslint-friendly-formatter --eff-filter option should produce the expect
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: basic 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m   path is defined but never used                    
   [4m[90m/home/usr/roy/index.js:8:2[39m[24m
   [90m  path = require( \'path\' ),[39m
@@ -53,7 +53,7 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: fatal 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m  Unexpected token {  
   [4m[90m/home/usr/roy/index.js:3:13[39m[24m
   
@@ -67,7 +67,7 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: missing-line-column 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m                 path is defined but never used                    
   [4m[90m/home/usr/roy/index.js:0:0[39m[24m
   [90m  path = require( \'path\' ),[39m
@@ -96,7 +96,7 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: missing-messages 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m            Expected { after \'if\' condition                   
   [4m[90m/home/usr/roy/test/runner.js:41:2[39m[24m
   [90m  if ( err ) console.log( \'failed tests: \' + err );[39m
@@ -117,7 +117,7 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: missing-rule-id 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m                 path is defined but never used                    
   [4m[90m/home/usr/roy/index.js:8:2[39m[24m
   [90m  path = require( \'path\' ),[39m
@@ -150,7 +150,7 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
 exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: null-results-provided 1`] = `""`;
 
 exports[`eslint-friendly-formatter absolute paths to file should produce the expected output for the given input: single-error 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m   path is defined but never used                    
   [4m[90m/home/usr/roy/index.js:8:2[39m[24m
   [90m  path = require( \'path\' ),[39m
@@ -179,7 +179,7 @@ exports[`eslint-friendly-formatter absolute paths to file should produce the exp
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: basic 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m   path is defined but never used                    
   [4m/home/usr/roy/index.js:8:2[24m
     path = require( \'path\' ),
@@ -218,7 +218,7 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: fatal 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [31m✘[39m  [4mhttp://eslint.org/docs/rules/[24m  Unexpected token {  
   [4m/home/usr/roy/index.js:3:13[24m
   
@@ -232,7 +232,7 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: missing-line-column 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[24m                 path is defined but never used                    
   [4m/home/usr/roy/index.js:0:0[24m
     path = require( \'path\' ),
@@ -261,7 +261,7 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: missing-messages 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [31m✘[39m  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m            Expected { after \'if\' condition                   
   [4m/home/usr/roy/test/runner.js:41:2[24m
     if ( err ) console.log( \'failed tests: \' + err );
@@ -282,7 +282,7 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
 `;
 
 exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: missing-rule-id 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[24m                 path is defined but never used                    
   [4m/home/usr/roy/index.js:8:2[24m
     path = require( \'path\' ),
@@ -315,7 +315,7 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
 exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: null-results-provided 1`] = `""`;
 
 exports[`eslint-friendly-formatter absolute paths to file, no gray should produce the expected output for the given input: single-error 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m   path is defined but never used                    
   [4m/home/usr/roy/index.js:8:2[24m
     path = require( \'path\' ),
@@ -344,7 +344,7 @@ exports[`eslint-friendly-formatter absolute paths to file, no gray should produc
 `;
 
 exports[`eslint-friendly-formatter custom rules links open google search should produce the expected output for the given input: single-error 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m    path is defined but never used                    
   [4m[90mindex.js:8:2[39m[24m
   [90m  path = require( \'path\' ),[39m
@@ -373,7 +373,7 @@ exports[`eslint-friendly-formatter custom rules links open google search should 
 `;
 
 exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: basic 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m   path is defined but never used                    
   [4m[90mindex.js:8:2[39m[24m
   [90m  path = require( \'path\' ),[39m
@@ -412,7 +412,7 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
 `;
 
 exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: fatal 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m  Unexpected token {  
   [4m[90mindex.js:3:13[39m[24m
   
@@ -426,7 +426,7 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
 `;
 
 exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: missing-line-column 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m                 path is defined but never used                    
   [4m[90mindex.js:0:0[39m[24m
   [90m  path = require( \'path\' ),[39m
@@ -455,7 +455,7 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
 `;
 
 exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: missing-messages 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m            Expected { after \'if\' condition                   
   [4m[90mtest/runner.js:41:2[39m[24m
   [90m  if ( err ) console.log( \'failed tests: \' + err );[39m
@@ -476,7 +476,7 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
 `;
 
 exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: missing-rule-id 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m                 path is defined but never used                    
   [4m[90mindex.js:8:2[39m[24m
   [90m  path = require( \'path\' ),[39m
@@ -509,7 +509,7 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
 exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: null-results-provided 1`] = `""`;
 
 exports[`eslint-friendly-formatter formatter should produce the expected output for the given input: single-error 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m   path is defined but never used                    
   [4m[90mindex.js:8:2[39m[24m
   [90m  path = require( \'path\' ),[39m
@@ -538,7 +538,7 @@ exports[`eslint-friendly-formatter formatter should produce the expected output 
 `;
 
 exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: basic 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m   path is defined but never used                    
   [4mindex.js:8:2[24m
     path = require( \'path\' ),
@@ -577,7 +577,7 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
 `;
 
 exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: fatal 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [31m✘[39m  [4mhttp://eslint.org/docs/rules/[24m  Unexpected token {  
   [4mindex.js:3:13[24m
   
@@ -591,7 +591,7 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
 `;
 
 exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: missing-line-column 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[24m                 path is defined but never used                    
   [4mindex.js:0:0[24m
     path = require( \'path\' ),
@@ -620,7 +620,7 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
 `;
 
 exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: missing-messages 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [31m✘[39m  [4mhttp://eslint.org/docs/rules/[37mcurly[39m[24m            Expected { after \'if\' condition                   
   [4mtest/runner.js:41:2[24m
     if ( err ) console.log( \'failed tests: \' + err );
@@ -641,7 +641,7 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
 `;
 
 exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: missing-rule-id 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[24m                 path is defined but never used                    
   [4mindex.js:8:2[24m
     path = require( \'path\' ),
@@ -674,7 +674,7 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
 exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: null-results-provided 1`] = `""`;
 
 exports[`eslint-friendly-formatter no gray should produce the expected output for the given input: single-error 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4mhttp://eslint.org/docs/rules/[37mno-unused-vars[39m[24m   path is defined but never used                    
   [4mindex.js:8:2[24m
     path = require( \'path\' ),
@@ -703,7 +703,7 @@ exports[`eslint-friendly-formatter no gray should produce the expected output fo
 `;
 
 exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: basic 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [37mno-unused-vars[39m   path is defined but never used                    
   [4m[90mindex.js:8:2[39m[24m
   [90m  path = require( \'path\' ),[39m
@@ -742,7 +742,7 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
 `;
 
 exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: fatal 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [31m✘[39m    Unexpected token {  
   [4m[90mindex.js:3:13[39m[24m
   
@@ -756,7 +756,7 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
 `;
 
 exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: missing-line-column 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m                   path is defined but never used                    
   [4m[90mindex.js:0:0[39m[24m
   [90m  path = require( \'path\' ),[39m
@@ -785,7 +785,7 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
 `;
 
 exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: missing-messages 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [31m✘[39m  [37mcurly[39m            Expected { after \'if\' condition                   
   [4m[90mtest/runner.js:41:2[39m[24m
   [90m  if ( err ) console.log( \'failed tests: \' + err );[39m
@@ -806,7 +806,7 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
 `;
 
 exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: missing-rule-id 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m                   path is defined but never used                    
   [4m[90mindex.js:8:2[39m[24m
   [90m  path = require( \'path\' ),[39m
@@ -839,7 +839,7 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
 exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: null-results-provided 1`] = `""`;
 
 exports[`eslint-friendly-formatter no links to rules should produce the expected output for the given input: single-error 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [37mno-unused-vars[39m   path is defined but never used                    
   [4m[90mindex.js:8:2[39m[24m
   [90m  path = require( \'path\' ),[39m
@@ -868,7 +868,7 @@ exports[`eslint-friendly-formatter no links to rules should produce the expected
 `;
 
 exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: basic 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m   path is defined but never used                    
   [90m/home/usr/roy/index.js:8:2[39m
   [4m[90meditor://open?file=%2Fhome%2Fusr%2Froy%2Findex.js&line=8&column=2[39m[24m
@@ -912,7 +912,7 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
 `;
 
 exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: fatal 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m  Unexpected token {  
   [90m/home/usr/roy/index.js:3:13[39m
   [4m[90meditor://open?file=%2Fhome%2Fusr%2Froy%2Findex.js&line=3&column=13[39m[24m
@@ -927,7 +927,7 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
 `;
 
 exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: missing-line-column 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m                 path is defined but never used                    
   [90m/home/usr/roy/index.js:0:0[39m
   [4m[90meditor://open?file=%2Fhome%2Fusr%2Froy%2Findex.js&line=0&column=0[39m[24m
@@ -959,7 +959,7 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
 `;
 
 exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: missing-messages 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m            Expected { after \'if\' condition                   
   [90m/home/usr/roy/test/runner.js:41:2[39m
   [4m[90meditor://open?file=%2Fhome%2Fusr%2Froy%2Ftest%2Frunner.js&line=41&column=2[39m[24m
@@ -982,7 +982,7 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
 `;
 
 exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: missing-rule-id 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[39m[24m                 path is defined but never used                    
   [90m/home/usr/roy/index.js:8:2[39m
   [4m[90meditor://open?file=%2Fhome%2Fusr%2Froy%2Findex.js&line=8&column=2[39m[24m
@@ -1018,7 +1018,7 @@ exports[`eslint-friendly-formatter scheme should produce the expected output for
 exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: null-results-provided 1`] = `""`;
 
 exports[`eslint-friendly-formatter scheme should produce the expected output for the given input: single-error 1`] = `
-"]50;CurrentDir=/path/to/working/directory
+"]1337;CurrentDir=/path/to/working/directory
   [33m⚠[39m  [4m[90mhttp://eslint.org/docs/rules/[37mno-unused-vars[90m[39m[24m   path is defined but never used                    
   [90m/home/usr/roy/index.js:8:2[39m
   [4m[90meditor://open?file=%2Fhome%2Fusr%2Froy%2Findex.js&line=8&column=2[39m[24m

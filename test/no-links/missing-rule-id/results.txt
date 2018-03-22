@@ -1,4 +1,4 @@
-]50;CurrentDir=/Users/roy/royws/eslint-friendly-formatter
+]1337;CurrentDir=/Users/roy/royws/eslint-friendly-formatter
   [33m⚠[39m                   path is defined but never used                    
   [4m[90mindex.js:8:2[39m[24m
   [90m  path = require( 'path' ),[39m

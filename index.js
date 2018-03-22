@@ -245,7 +245,7 @@ module.exports = function(results) {
   }
 
   if (process.env.FORCE_ITERM_HINT === 'true' || (process.stdout.isTTY && !process.env.CI)) {
-    output = '\u001B]50;CurrentDir=' + process.cwd() + '\u0007' + output;
+    output = '\u001B]1337;CurrentDir=' + process.cwd() + '\u0007' + output;
   }
 
   return total > 0 ? output : '';
