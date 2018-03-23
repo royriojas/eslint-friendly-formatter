@@ -23,6 +23,7 @@
     "lint-fix": "npm run beautify && npm run eslint -- --fix",
     "lint": "npm run beautify-check && npm run eslint",
     "test": "npm run lint && FORCE_ITERM_HINT=true mocha-runner 'test/specs/**/*.js'",
+    "test:update": "CHAI_JEST_SNAPSHOT_UPDATE_ALL=true npm test",
     "cover": "istanbul cover -x 'test/specs/**/*.js' mocha-runner 'test/specs/**/*.js' html text-summary",
     "watch": "npm run cover && watch-spawn -i -p 'test/specs/**/*.js' istanbul cover test/runner.js html text-summary",
     "check": "npm run beautify-check && npm run eslint",
@@ -50,7 +51,7 @@
     "npm run verify"
   ],
   "devDependencies": {
-    "chai-jest-snapshot": "0.3.0",
+    "chai-jest-snapshot": "2.0.0",
     "changelogx": "^1.0.18",
     "esbeautifier": "10.1.1",
     "eslint": "^2.10.2",

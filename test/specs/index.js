@@ -9,6 +9,10 @@ var proxyquire = require('proxyquire');
 
 chai.use(chaiJestSnapshot);
 
+before(function() {
+  chaiJestSnapshot.resetSnapshotRegistry();
+});
+
 beforeEach(function() {
   chaiJestSnapshot.configureUsingMochaContext(this);
 });

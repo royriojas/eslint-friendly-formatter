@@ -223,17 +223,17 @@ module.exports = function(results) {
 
   if (total > 0) {
     output += chalk[summaryColor].bold([
-      '✘ ',
-      total,
-      pluralize(' problem', total),
-      ' (',
-      errors,
-      pluralize(' error', errors),
-      ', ',
-      warnings,
-      pluralize(' warning', warnings),
-      ')'
-    ].join('')) + chalk.white('\n');
+        '✘ ',
+        total,
+        pluralize(' problem', total),
+        ' (',
+        errors,
+        pluralize(' error', errors),
+        ', ',
+        warnings,
+        pluralize(' warning', warnings),
+        ')'
+      ].join('')) + chalk.white('\n');
 
     if (errors > 0) {
       output += printSummary(errorsHash, 'Errors', 'red');
