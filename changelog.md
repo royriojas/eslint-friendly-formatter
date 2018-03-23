@@ -1,5 +1,56 @@
 
 # eslint-friendly-formatter - Changelog
+## v4.0.0
+- **Build Scripts Changes**
+  - Release v4.0.0 - [1863038]( https://github.com/royriojas/eslint-friendly-formatter/commit/1863038 ), [Roy Riojas](https://github.com/Roy Riojas), 22/03/2018 21:00:11
+
+    
+  - update nodejs in travis to 6x - [d0b184e]( https://github.com/royriojas/eslint-friendly-formatter/commit/d0b184e ), [Roy Riojas](https://github.com/Roy Riojas), 11/05/2017 16:38:03
+
+    
+- **Bug Fixes**
+  - Make tests to pass for [#23](https://github.com/royriojas/eslint-friendly-formatter/issues/23) - [68de47b]( https://github.com/royriojas/eslint-friendly-formatter/commit/68de47b ), [Roy Riojas](https://github.com/Roy Riojas), 22/03/2018 20:59:53
+
+    
+  - make travis happy again, take 4 - [747f1e6]( https://github.com/royriojas/eslint-friendly-formatter/commit/747f1e6 ), [Roy Riojas](https://github.com/Roy Riojas), 11/05/2017 17:39:42
+
+    
+  - use chai-jest-snapshot - [1c6c7a8]( https://github.com/royriojas/eslint-friendly-formatter/commit/1c6c7a8 ), [Roy Riojas](https://github.com/Roy Riojas), 11/05/2017 17:32:05
+
+    
+  - Add snapshot testing to make it easier the testing - [c42a40a]( https://github.com/royriojas/eslint-friendly-formatter/commit/c42a40a ), [Roy Riojas](https://github.com/Roy Riojas), 11/05/2017 14:04:10
+
+    
+  - make travis happy again, take 2 - [a4e2d42]( https://github.com/royriojas/eslint-friendly-formatter/commit/a4e2d42 ), [Roy Riojas](https://github.com/Roy Riojas), 11/05/2017 13:23:12
+
+    
+  - make travis happy again - [3a431a9]( https://github.com/royriojas/eslint-friendly-formatter/commit/3a431a9 ), [Roy Riojas](https://github.com/Roy Riojas), 11/05/2017 12:49:44
+
+    
+- **Other changes**
+  - Fix trailing color in new lines - [414db03]( https://github.com/royriojas/eslint-friendly-formatter/commit/414db03 ), [Elad Chen](https://github.com/Elad Chen), 22/03/2018 20:33:23
+
+    When the output is constructed, new lines are included in the colored string.
+    
+    <img src="http://i.imgur.com/DthTZXz.png">
+    
+    <img src="http://i.imgur.com/nsiFALg.png">
+  - Change iterm escape code - [23ad2ec]( https://github.com/royriojas/eslint-friendly-formatter/commit/23ad2ec ), [Alex Gartner](https://github.com/Alex Gartner), 21/03/2018 22:05:51
+
+    
+  - Update README.md - [32a1e55]( https://github.com/royriojas/eslint-friendly-formatter/commit/32a1e55 ), [Roy Riojas](https://github.com/Roy Riojas), 09/08/2017 17:57:19
+
+    
+  - Update tests snapshots after upgrading chalk. - [1951a8f]( https://github.com/royriojas/eslint-friendly-formatter/commit/1951a8f ), [hsxfjames](https://github.com/hsxfjames), 06/07/2017 20:56:30
+
+    
+  - Upgrade chalk to v2.0.1 && DO NOT use removed method `chalk.stripColor` - [25ff0b5]( https://github.com/royriojas/eslint-friendly-formatter/commit/25ff0b5 ), [hsxfjames](https://github.com/hsxfjames), 05/07/2017 04:35:34
+
+    
+- **Documentation**
+  - Generate changelog - [990a3a3]( https://github.com/royriojas/eslint-friendly-formatter/commit/990a3a3 ), [Roy Riojas](https://github.com/Roy Riojas), 11/05/2017 04:49:15
+
+    
 ## v3.0.0
 - **Build Scripts Changes**
   - Release v3.0.0 - [6819e5e]( https://github.com/royriojas/eslint-friendly-formatter/commit/6819e5e ), [Roy Riojas](https://github.com/Roy Riojas), 11/05/2017 04:49:13
