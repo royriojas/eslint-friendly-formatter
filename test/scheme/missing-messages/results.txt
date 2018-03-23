@@ -1,4 +1,4 @@
-]50;CurrentDir=/Users/roy/royws/eslint-friendly-formatter
+]1337;CurrentDir=/Users/roy/royws/eslint-friendly-formatter
   [31m✘[39m  [4m[90mhttp://eslint.org/docs/rules/[37mcurly[90m[39m[24m            Expected { after 'if' condition                   
   [90m/home/usr/roy/test/runner.js:41:2[39m
   [4m[90meditor://open?file=%2Fhome%2Fusr%2Froy%2Ftest%2Frunner.js&line=41&column=2[39m[24m

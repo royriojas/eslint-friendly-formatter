@@ -1,4 +1,4 @@
-]50;CurrentDir=/Users/roy/royws/eslint-friendly-formatter
+]1337;CurrentDir=/Users/roy/royws/eslint-friendly-formatter
   [31m✘[39m    Unexpected token {  
   [4m[90mindex.js:3:13[39m[24m
   
