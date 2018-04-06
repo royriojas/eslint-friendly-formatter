@@ -5,6 +5,7 @@
       {
         "fatal": true,
         "severity": 2,
+        "source": null,
         "message": "Unexpected token {",
         "line": 3,
         "column": 13
