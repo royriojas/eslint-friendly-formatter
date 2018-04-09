@@ -1,5 +1,20 @@
 
 # eslint-friendly-formatter - Changelog
+## v4.0.1
+- **Build Scripts Changes**
+  - Release v4.0.1 - [584f8e6]( https://github.com/royriojas/eslint-friendly-formatter/commit/584f8e6 ), [Roy Riojas](https://github.com/Roy Riojas), 08/04/2018 23:25:16
+
+    
+- **Other changes**
+  - Allow for null message.source - [e0fcea4]( https://github.com/royriojas/eslint-friendly-formatter/commit/e0fcea4 ), [exbinary](https://github.com/exbinary), 06/04/2018 14:03:56
+
+    Addresses issue <a target="_blank" class="info-link" href="https://github.com/royriojas/eslint-friendly-formatter/issues/29"><span>#29</span></a>. Message source can be null when a Parsing error is
+    encountered.
+    
+- **Documentation**
+  - Generate changelog - [e2d0900]( https://github.com/royriojas/eslint-friendly-formatter/commit/e2d0900 ), [Roy Riojas](https://github.com/Roy Riojas), 22/03/2018 21:00:14
+
+    
 ## v4.0.0
 - **Build Scripts Changes**
   - Release v4.0.0 - [1863038]( https://github.com/royriojas/eslint-friendly-formatter/commit/1863038 ), [Roy Riojas](https://github.com/Roy Riojas), 22/03/2018 21:00:11
