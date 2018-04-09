@@ -182,7 +182,7 @@ module.exports = function(results) {
           var column = message.column || 0;
 
           var arrow = '';
-          var hasSource = message.source !== undefined && message.source.length < 1000;
+          var hasSource = message.source && message.source.length < 1000;
           if (hasSource) {
             for (var i = 0; i < message.column; i++) {
               if (message.source.charAt(i) === '\t') {
