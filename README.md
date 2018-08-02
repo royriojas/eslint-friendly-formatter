@@ -1,8 +1,8 @@
-# [eslint](https://github.com/nzakas/eslint/)-friendly-formatter
+# [eslint](https://github.com/nzakas/eslint/)-formatter-friendly
 > A simple formatter/reporter for [ESLint](https://github.com/nzakas/eslint/) that's friendly with Sublime Text and iterm2 "click to open file" functionality
 
-[![NPM Version](http://img.shields.io/npm/v/eslint-friendly-formatter.svg?style=flat)](https://npmjs.org/package/eslint-friendly-formatter)
-[![Build Status](http://img.shields.io/travis/royriojas/eslint-friendly-formatter.svg?style=flat)](https://travis-ci.org/royriojas/eslint-friendly-formatter)
+[![NPM Version](http://img.shields.io/npm/v/eslint-formatter-friendly.svg?style=flat)](https://npmjs.org/package/eslint-formatter-friendly)
+[![Build Status](http://img.shields.io/travis/royriojas/eslint-formatter-friendly.svg?style=flat)](https://travis-ci.org/royriojas/eslint-formatter-friendly)
 
 ## Motivation for this module
 
@@ -32,14 +32,14 @@ This module is based on the original `stylish` formatter that is now part of ESL
 ## install
 
 ```bash
-npm i --save-dev eslint-friendly-formatter
+npm i --save-dev eslint-formatter-friendly
 ```
 
 ## Intellij/Webstorm/PhpStorm integration
-0. Install `eslint` and `eslint-friendly-formatter`.
+0. Install `eslint` and `eslint-formatter-friendly`.
 
    ```bash
-   npm i -D eslint eslint-friendly-formatter
+   npm i -D eslint eslint-formatter-friendly
    ```
 
 1. Add a script to your package json like:
@@ -47,7 +47,7 @@ npm i --save-dev eslint-friendly-formatter
    ```javascript
    {
      "scripts": {
-       "eslint": "eslint --format 'node_modules/eslint-friendly-formatter' file1 file2 dir1/ dir2/",
+       "eslint": "eslint --format 'node_modules/eslint-formatter-friendly' file1 file2 dir1/ dir2/",
      }
    }
    ```
@@ -57,12 +57,12 @@ npm i --save-dev eslint-friendly-formatter
    ```javascript
    {
      "scripts": {
-       "eslint": "eslint --format node_modules/eslint-friendly-formatter file1 file2 dir1/ dir2/",
+       "eslint": "eslint --format node_modules/eslint-formatter-friendly file1 file2 dir1/ dir2/",
      }
    }
    ```
 
-   see [issue #17](https://github.com/royriojas/eslint-friendly-formatter/issues/17)
+   see [issue #17](https://github.com/royriojas/eslint-formatter-friendly/issues/17)
 
 1. Create a external tool to run eslint using this module as your formatter like this
    - program: `npm`
@@ -83,7 +83,7 @@ In the command line
 
 ```bash
 # just make sure you pass the path to the module to the format option of eslint
-eslint.js --format './node_modules/eslint-friendly-formatter/index.js' index.js test/ -c './eslint.json'
+eslint.js --format './node_modules/eslint-formatter-friendly/index.js' index.js test/ -c './eslint.json'
 ```
 
 Or as a module
@@ -96,7 +96,7 @@ var engine = new eslint.CLIEngine( opts );
 var report = engine.executeOnFiles( ['file1.js', 'file2.js'/*, ...*/] );
 var results = report.results || [];
 
-var formatter = require('eslint-friendly-formatter');
+var formatter = require('eslint-formatter-friendly');
 var output = formatter(results);
 
 // this will print the report if any...
@@ -106,7 +106,7 @@ console.log(output);
 It works with `gulp` and `gulp-eslint`
 
 ```javascript
-var friendlyFormatter = require("eslint-friendly-formatter");
+var friendlyFormatter = require("eslint-formatter-friendly");
 // Your js task
 gulp.task("javascript", function() {
   return gulp.src(["src/js/**/*.js"])
@@ -126,7 +126,7 @@ grunt.initConfig({
     // when using eslint-grunt:
     eslint: {
         options: {
-            formatter: './node_modules/eslint-friendly-formatter'
+            formatter: './node_modules/eslint-formatter-friendly'
         }),
         target1: {
             //..
@@ -135,7 +135,7 @@ grunt.initConfig({
     // when using grunt-eslint:
     eslint: {
         options: {
-            format: './node_modules/eslint-friendly-formatter'
+            format: './node_modules/eslint-formatter-friendly'
         }),
         target2: {
             //..
@@ -159,7 +159,7 @@ to pass parameters to the formatter we will have to rely on **environment variab
 Only shows the `errors`/`warnigs` that match the given `ruleId` filter. This option will only filter the reported rules the error and warning counts will be the same as when all rules are reported same as the exit code.
 
 ```bash
-eslint -f node_modules/eslint-friendly-formatter client/**/*.js server/**/*.js -- --eff-by-issue --eff-filter 'global-require' # notice the --
+eslint -f node_modules/eslint-formatter-friendly client/**/*.js server/**/*.js -- --eff-by-issue --eff-filter 'global-require' # notice the --
 ```
 
 #### --eff-by-issue
@@ -167,7 +167,7 @@ eslint -f node_modules/eslint-friendly-formatter client/**/*.js server/**/*.js -
 Normally the reporter will group issues by file, which is handy for normal development. But there are some cases where you might want to fix all the errors of a same kind all at once. For those cases this flag can be used to make the reporter group the issues by ruleId.
 
 ```bash
-eslint -f node_modules/eslint-friendly-formatter client/**/*.js server/**/*.js -- --eff-by-issue # notice the --
+eslint -f node_modules/eslint-formatter-friendly client/**/*.js server/**/*.js -- --eff-by-issue # notice the --
 ```
 
 **Important**: don't forget to add the flag at the end and after `-- ` otherwise it will be interpreted as a eslint parameter and will fail as that parameter is not known to eslint.
@@ -182,7 +182,7 @@ Same as environment variable `EFF_ABSOLUTE_PATHS`. If set to true the paths will
 
 Disable the gray color output
 
-We use the gray color to show some info about the context where the error/warning happens. If for some reason you want to disable the gray color, [in cases like this one ](https://github.com/royriojas/eslint-friendly-formatter/pull/2), you can do it using an environment variable.
+We use the gray color to show some info about the context where the error/warning happens. If for some reason you want to disable the gray color, [in cases like this one ](https://github.com/royriojas/eslint-formatter-friendly/pull/2), you can do it using an environment variable.
 
 ```bash
 export EFF_NO_GRAY=true

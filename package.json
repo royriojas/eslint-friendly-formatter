@@ -1,5 +1,5 @@
 {
-  "name": "eslint-friendly-formatter",
+  "name": "eslint-formatter-friendly",
   "version": "4.0.1",
   "description": " simple formatter/reporter for eslint that's friendly with Sublime Text and iterm2 'click to open file' functionality",
   "repository": "royriojas/eslint-friendly-formatter",
@@ -68,6 +68,7 @@
     "write": "^0.2.0"
   },
   "dependencies": {
+    "babel-code-frame": "6.26.0",
     "chalk": "^2.0.1",
     "coalescy": "1.0.0",
     "extend": "^3.0.0",
@@ -77,9 +78,9 @@
   },
   "changelogx": {
     "issueIDRegExp": "#(\\d+)",
-    "commitURL": "https://github.com/royriojas/eslint-friendly-formatter/commit/{0}",
+    "commitURL": "https://github.com/royriojas/eslint-formatter-friendly/commit/{0}",
     "authorURL": "https://github.com/{0}",
-    "issueIDURL": "https://github.com/royriojas/eslint-friendly-formatter/issues/{0}",
+    "issueIDURL": "https://github.com/royriojas/eslint-formatter-friendly/issues/{0}",
     "projectName": "eslint-friendly-formatter"
   }
 }

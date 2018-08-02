@@ -33,6 +33,11 @@ describe('eslint-friendly-formatter', function() {
     var formatter = proxyquire('../..', {
       path: {
       },
+      fs: {
+        readFileSync: function() {
+          return '';
+        }
+      },
       './process': {
         env: {
           EFF_NO_GRAY: 'false'
@@ -50,10 +55,6 @@ describe('eslint-friendly-formatter', function() {
         var results = readJsonFile(file);
         var output = formatter(results);
         expect(output).to.matchSnapshot();
-        // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-        // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-        // expect(output).to.equal(resultText);
-
       });
     });
   });
@@ -61,6 +62,11 @@ describe('eslint-friendly-formatter', function() {
   describe('no gray', function() {
     var formatter = proxyquire('../..', {
       path: {},
+      fs: {
+        readFileSync: function() {
+          return '';
+        }
+      },
       './process': {
         env: {
           EFF_NO_GRAY: 'true'
@@ -78,9 +84,6 @@ describe('eslint-friendly-formatter', function() {
         var results = readJsonFile(file);
         var output = formatter(results);
         expect(output).to.matchSnapshot();
-      // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-      // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-      // expect(output).to.equal(resultText);
       });
     });
   });
@@ -90,6 +93,11 @@ describe('eslint-friendly-formatter', function() {
       path: {
         resolve: function(args) {
           return '/home/usr/roy/' + args;
+        }
+      },
+      fs: {
+        readFileSync: function() {
+          return '';
         }
       },
       './process': {
@@ -109,9 +117,6 @@ describe('eslint-friendly-formatter', function() {
         var results = readJsonFile(file);
         var output = formatter(results);
         expect(output).to.matchSnapshot();
-      // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-      // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-      // expect(output).to.equal(resultText);
       });
     });
   });
@@ -121,6 +126,11 @@ describe('eslint-friendly-formatter', function() {
       path: {
         resolve: function(args) {
           return '/home/usr/roy/' + args;
+        }
+      },
+      fs: {
+        readFileSync: function() {
+          return '';
         }
       },
       './process': {
@@ -141,9 +151,6 @@ describe('eslint-friendly-formatter', function() {
         var results = readJsonFile(file);
         var output = formatter(results);
         expect(output).to.matchSnapshot();
-      // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-      // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-      // expect(output).to.equal(resultText);
       });
     });
   });
@@ -153,6 +160,11 @@ describe('eslint-friendly-formatter', function() {
       path: {
         resolve: function(args) {
           return '/home/usr/roy/' + args;
+        }
+      },
+      fs: {
+        readFileSync: function() {
+          return '';
         }
       },
       './process': {
@@ -173,9 +185,6 @@ describe('eslint-friendly-formatter', function() {
         var results = readJsonFile(file);
         var output = formatter(results);
         expect(output).to.matchSnapshot();
-      // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-      // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-      // expect(output).to.equal(resultText);
       });
     });
   });
@@ -185,6 +194,11 @@ describe('eslint-friendly-formatter', function() {
       path: {
         resolve: function(args) {
           return '/home/usr/roy/' + args;
+        }
+      },
+      fs: {
+        readFileSync: function() {
+          return '';
         }
       },
       './process': {
@@ -204,9 +218,6 @@ describe('eslint-friendly-formatter', function() {
         var results = readJsonFile(file);
         var output = formatter(results);
         expect(output).to.matchSnapshot();
-      // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-      // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-      // expect(output).to.equal(resultText);
       });
     });
   });
@@ -216,6 +227,11 @@ describe('eslint-friendly-formatter', function() {
       path: {
         resolve: function(args) {
           return '/home/usr/roy/' + args;
+        }
+      },
+      fs: {
+        readFileSync: function() {
+          return '';
         }
       },
       './process': {
@@ -235,10 +251,6 @@ describe('eslint-friendly-formatter', function() {
         var results = readJsonFile(file);
         var output = formatter(results);
         expect(output).to.matchSnapshot();
-      // var write = require( 'write' ).sync;
-      // write(path.join( path.dirname( file ), path.basename( file, '.json' ) + '.txt' ), output);
-      // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-      // expect(output).to.equal(resultText);
       });
     });
   });
@@ -248,6 +260,11 @@ describe('eslint-friendly-formatter', function() {
       path: {
         resolve: function(args) {
           return '/home/usr/roy/' + args;
+        }
+      },
+      fs: {
+        readFileSync: function() {
+          return '';
         }
       },
       './process': {
@@ -265,10 +282,6 @@ describe('eslint-friendly-formatter', function() {
         var results = readJsonFile(file);
         var output = formatter(results);
         expect(output).to.matchSnapshot();
-      // var write = require('write').sync;
-      // write(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'), output);
-      // var resultText = read(path.join(path.dirname(file), path.basename(file, '.json') + '.txt'));
-      // expect(output).to.equal(resultText);
       });
     });
   });

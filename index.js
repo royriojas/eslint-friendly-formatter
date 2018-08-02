@@ -13,6 +13,9 @@ var path = require('path');
 var process = require('./process');
 var minimist = require('minimist');
 var clsc = require('coalescy');
+var fs = require('fs');
+var codeFrame = require('babel-code-frame');
+
 
 //------------------------------------------------------------------------------
 // Helpers
@@ -103,6 +106,7 @@ module.exports = function(results) {
 
   var groupByIssue = parsedArgs['eff-by-issue'];
   var filterRule = parsedArgs['eff-filter'];
+  var showSource = !parsedArgs['eff-no-source'];
 
   absolutePathsToFile = clsc(parsedArgs['eff-absolute-paths'], absolutePathsToFile);
 
@@ -111,10 +115,13 @@ module.exports = function(results) {
 
   results.forEach(function(result) {
     var messages = result.messages || [];
+    const fileSource = result.source || fs.readFileSync(result.filePath, 'utf8');
     entries = entries.concat(messages.map(function(message) {
       return extend({
         filePath: absolutePathsToFile ? path.resolve(result.filePath) : path.relative('.', result.filePath)
-      }, message);
+      }, message, {
+        fileSource
+      });
     }));
   });
 
@@ -157,67 +164,87 @@ module.exports = function(results) {
     return 0;
   });
 
-  output += table(
-        entries.reduce(function(seq, message) {
-          var messageType;
+  var lastRuleId;
 
-          if (filterRule) {
-            if (message.ruleId !== filterRule) {
-              return seq;
-            }
+  output += entries.reduce(function(seq, message) {
+        var messageType;
+
+        if (filterRule) {
+          if (message.ruleId !== filterRule) {
+            return seq;
           }
+        }
 
-          if (message.fatal || message.severity === 2) {
-            messageType = chalk.red('✘');
-            summaryColor = 'red';
-            errorsHash[message.ruleId] = (errorsHash[message.ruleId] || 0) + 1;
-            errors++;
-          } else {
-            messageType = chalk.yellow('⚠');
-            warningsHash[message.ruleId] = (warningsHash[message.ruleId] || 0) + 1;
-            warnings++;
-          }
+        if (message.fatal || message.severity === 2) {
+          messageType = chalk.red('✘');
+          summaryColor = 'red';
+          errorsHash[message.ruleId] = (errorsHash[message.ruleId] || 0) + 1;
+          errors++;
+        } else {
+          messageType = chalk.yellow('⚠');
+          warningsHash[message.ruleId] = (warningsHash[message.ruleId] || 0) + 1;
+          warnings++;
+        }
 
-          var line = message.line || 0;
-          var column = message.column || 0;
+        var line = message.line || 0;
+        var column = message.column || 0;
 
-          var arrow = '';
-          var hasSource = message.source && message.source.length < 1000;
-          if (hasSource) {
-            for (var i = 0; i < message.column; i++) {
-              if (message.source.charAt(i) === '\t') {
-                arrow += '\t';
-              } else {
-                arrow += ' ';
-              }
-            }
-            arrow += '^';
-          }
+        var filePath = message.filePath;
+        var link = getFileLink(filePath, line, column);
+        var filename = subtleLog(filePath + ':' + line + ':' + column);
 
-          var filePath = message.filePath;
-          var link = getFileLink(filePath, line, column);
-          var filename = subtleLog(filePath + ':' + line + ':' + column);
+        function renderTitle() {
+          return '\n  ' + messageType + '  ' + getKeyLink(message.ruleId || '');
+        }
 
-          seq.push([
-            '',
-            messageType + '  ' + getKeyLink(message.ruleId || ''),
-            message.message.replace(/\.$/, ''),
-            '$MARKER$  ' + (link === false ? chalk.underline(filename) : filename) +
-              (link === false ? '' : '$MARKER$  ' + chalk.underline(subtleLog(link))) + '$MARKER$  ' +
-              (hasSource ? subtleLog(message.source) + '$MARKER$  ' + subtleLog(arrow) : '') + '$MARKER$'
-          ]);
-          return seq;
-        }, []), {
-          align: [
-            '',
-            'l',
-            'l',
-            'l'
-          ],
-          stringLength: function(str) {
-            return stripAnsi(str).length;
-          }
-        }).replace(/\$MARKER\$/g, '\n') + '\n\n';
+        function renderLink() {
+          return (link === false ? '' : '     ' + chalk.underline(subtleLog(link)));
+        }
+
+        function renderDescription() {
+          return '\n     ' + message.message.replace(/\.$/, '') + '\n';
+        }
+
+        function renderFileLink() {
+          return (showSource ? '\n' : '') + '     ' + (link === false ? chalk.underline(filename) : filename);
+        }
+
+        function renderSourceCode() {
+          return showSource ? codeFrame(message.fileSource, message.line, message.column, {
+            highlightCode: true
+          }).split('\n').map(l => '   ' + l).join('\n') : '';
+        }
+
+        function createLine(arr) {
+          return arr.filter(function(l) {
+            return !!(l || '').trim();
+          }).join('\n');
+        }
+
+        if (groupByIssue) {
+          var isSameIssueAsLastOne = lastRuleId === message.ruleId;
+          lastRuleId = message.ruleId;
+
+          seq.push(createLine([
+            !isSameIssueAsLastOne ? renderTitle() : '',
+            !isSameIssueAsLastOne ? renderLink() : '',
+            !isSameIssueAsLastOne ? renderDescription() : '',
+            renderFileLink(),
+            renderSourceCode()
+          ]));
+
+        } else {
+          seq.push(createLine([
+            renderTitle(),
+            renderLink(),
+            renderDescription(),
+            renderFileLink(),
+            renderSourceCode()
+          ]));
+        }
+
+        return seq;
+      }, []).join('\n') + '\n\n';
 
   total = entries.length;
 
@@ -240,7 +267,7 @@ module.exports = function(results) {
     }
 
     if (warnings > 0) {
-      output += printSummary(warningsHash, 'Warnings', 'yellow');
+      output += printSummary(warningsHash, 'Warnings', 'yellow') + '\n';
     }
   }
 
