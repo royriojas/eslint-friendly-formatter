@@ -1,3 +1,7 @@
+# Important
+
+[eslint](https://github.com/nzakas/eslint/)-formatter-friendly is moved to [eslint](https://github.com/nzakas/eslint/)-formatter-friendly check https://github.com/royriojas/eslint-friendly-formatter/issues/34 for the motivation
+
 # [eslint](https://github.com/nzakas/eslint/)-formatter-friendly
 > A simple formatter/reporter for [ESLint](https://github.com/nzakas/eslint/) that's friendly with Sublime Text and iterm2 "click to open file" functionality
 
