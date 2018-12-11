@@ -71,7 +71,7 @@
     "babel-code-frame": "6.26.0",
     "chalk": "^2.0.1",
     "coalescy": "1.0.0",
-    "extend": "^3.0.0",
+    "extend": "^3.0.2",
     "minimist": "^1.2.0",
     "strip-ansi": "^4.0.0",
     "text-table": "^0.2.0"
