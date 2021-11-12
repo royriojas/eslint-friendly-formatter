@@ -84,6 +84,18 @@ var printSummary = function(hash, title, method) {
   return res;
 };
 
+var tryParseJSONObject = function(jsonString) {
+  try {
+      var o = JSON.parse(jsonString);
+      if (o && typeof o === "object") {
+          return o;
+      }
+  }
+  catch (e) { }
+
+  return false;
+};
+
 //------------------------------------------------------------------------------
 // Public Interface
 //------------------------------------------------------------------------------
@@ -211,9 +223,13 @@ module.exports = function(results) {
         }
 
         function renderSourceCode() {
-          return showSource ? codeFrame(message.fileSource, message.line, message.column, {
-            highlightCode: true
-          }).split('\n').map(l => '   ' + l).join('\n') : '';
+          const codeFrameOptions = tryParseJSONObject(getEnvVar("EFF_CODE_FRAME_OPTIONS")) || { "highlightCode": true };
+          return showSource ? codeFrame(
+              message.fileSource,
+              message.line,
+              message.column,
+              codeFrameOptions
+            ).split('\n').map(l => '   ' + l).join('\n') : '';
         }
 
         function createLine(arr) {
