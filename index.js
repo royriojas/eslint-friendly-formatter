@@ -117,7 +117,7 @@ module.exports = function(results) {
   var restArgs = process.argv.slice(process.argv.indexOf('--') + 1);
   var parsedArgs = minimist(restArgs);
 
-  var groupByIssue = parsedArgs['eff-by-issue'];
+  var groupByIssue = parsedArgs['eff-by-issue'] || parseBoolEnvVar('EFF_BY_ISSUE');
   var filterRule = parsedArgs['eff-filter'];
   var showSource = !(parsedArgs['eff-no-source'] || parseBoolEnvVar('EFF_NO_SOURCE'));
 
