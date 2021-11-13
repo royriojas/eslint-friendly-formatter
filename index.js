@@ -119,7 +119,7 @@ module.exports = function(results) {
 
   var groupByIssue = parsedArgs['eff-by-issue'];
   var filterRule = parsedArgs['eff-filter'];
-  var showSource = !parsedArgs['eff-no-source'];
+  var showSource = !(parsedArgs['eff-no-source'] || parseBoolEnvVar('EFF_NO_SOURCE'));
 
   absolutePathsToFile = clsc(parsedArgs['eff-absolute-paths'], absolutePathsToFile);
 
